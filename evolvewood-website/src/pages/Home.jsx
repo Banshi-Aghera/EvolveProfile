@@ -81,7 +81,7 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1.5, delay: 0.4 }}
-                            className="relative lg:h-[700px] flex items-center justify-center lg:justify-end"
+                            className="relative overflow-hidden lg:h-[700px] flex items-center justify-center lg:justify-end"
                         >
                             <div className="relative w-full max-w-lg aspect-[4/5] mt-10 lg:mt-0">
                                 <motion.div 
@@ -98,7 +98,7 @@ export default function Home() {
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1 }}
-                                    className="absolute -right-4 lg:-right-8 top-1/4 glass p-6 rounded-3xl shadow-2xl"
+                                    className="absolute right-3 top-4 max-w-[220px] glass p-4 rounded-3xl shadow-2xl sm:right-4 sm:top-6 sm:max-w-[240px] sm:p-5 lg:-right-8 lg:top-1/4 lg:max-w-none lg:p-6"
                                 >
                                     <div className="bg-evolve-green/20 p-4 rounded-2xl text-evolve-green mb-3 inline-block">
                                         <ShieldCheck size={32} />
@@ -112,7 +112,7 @@ export default function Home() {
                                     initial={{ opacity: 0, y: 50 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2 }}
-                                    className="absolute -left-4 lg:-left-6 bottom-16 bg-white p-5 rounded-full shadow-2xl border flex items-center justify-center text-evolve-green"
+                                    className="absolute bottom-4 left-3 bg-white p-4 rounded-full shadow-2xl border flex items-center justify-center text-evolve-green sm:bottom-6 sm:left-4 sm:p-5 lg:-left-6 lg:bottom-16"
                                 >
                                     <Recycle size={32} />
                                 </motion.div>
