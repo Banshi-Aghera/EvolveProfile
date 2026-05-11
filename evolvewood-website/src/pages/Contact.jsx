@@ -1,77 +1,109 @@
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const address = ' Rajkot Highway, At- Sakatt Sanala Pin-363641, Ta- Morbi, Dist-Morbi';
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const phoneNumbers = ['+91 81415 14311', '+91 97378 35434'];
+const email = 'evolveprofileindustries@gmail.com';
+const whatsappNumber = '+91 9265988217';
+const whatsappUrl = 'https://wa.me/919265955217?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.';
+const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+
+const contactMethods = [
+    {
+        icon: MapPin,
+        title: 'Visit Us',
+        description: address,
+        actionLabel: 'Open in Maps',
+        href: mapUrl,
+        openInNewTab: true,
+    },
+    {
+        icon: Phone,
+        title: 'Call Us',
+        description: phoneNumbers.join('\n'),
+        actionLabel: 'Call Now',
+        href: 'tel:+918141514311',
+    },
+    {
+        icon: Mail,
+        title: 'Email Us',
+        description: email,
+        actionLabel: 'Open Email',
+        href: emailComposeUrl,
+        openInNewTab: true,
+    },
+    {
+        icon: MessageCircle,
+        title: 'WhatsApp',
+        description: whatsappNumber,
+        actionLabel: 'Chat on WhatsApp',
+        href: whatsappUrl,
+        openInNewTab: true,
+    },
+];
 
 export default function Contact() {
     return (
-        <>
+        <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO title="Contact Us" description="Get in touch with Evolve Profile Industries for your industrial packaging and profile needs." />
-            <PageHeader title="Contact Us" subtitle="We're here to help you find the sustainable solution." />
 
-            <section className="py-12 lg:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <PageHeader title="Contact Us" subtitle="Reach us directly through map, phone, email, or WhatsApp." />
 
-                        {/* Contact Info */}
-                        <div className="space-y-8">
-                            <h2 className="text-3xl font-bold font-display text-evolve-brown">Company Information</h2>
-                            <div className="space-y-6">
-                                <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm border border-evolve-brown/5">
-                                    <MapPin className="text-evolve-green mt-1 mr-4" size={24} />
-                                    <div>
-                                        <h4 className="font-bold text-evolve-brown mb-1">Address</h4>
-                                        <p className="text-evolve-text/70">Sr No. 262/1 P3 And 262/4 P2, Plot No-10, Dhanagood Industrial Estate, Rajkot Highway, At- Sofat Sanala Pin-363641, Ta- Morbi, Dist-Morbi</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm border border-evolve-brown/5">
-                                    <Phone className="text-evolve-green mt-1 mr-4" size={24} />
-                                    <div>
-                                        <h4 className="font-bold text-evolve-brown mb-1">Phone</h4>
-                                        <p className="text-evolve-text/70">+91 81415 14311</p>
-                                        <p className="text-evolve-text/70">+91 97378 35434</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm border border-evolve-brown/5">
-                                    <Mail className="text-evolve-green mt-1 mr-4" size={24} />
-                                    <div>
-                                        <h4 className="font-bold text-evolve-brown mb-1">Email</h4>
-                                        <p className="text-evolve-text/70">evolveprofileindustries@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <section className="py-12 lg:py-24 relative">
+                <div className="blob bg-evolve-green/10 w-[600px] h-[600px] top-[20%] left-[-200px]"></div>
+                <div className="blob bg-evolve-brown/10 w-[500px] h-[500px] bottom-[-100px] right-[-100px]"></div>
 
-                        {/* Form */}
-                        <div className="bg-white p-8 lg:p-12 rounded-[3rem] shadow-xl border border-evolve-brown/10">
-                            <h2 className="text-3xl font-bold font-display text-evolve-brown mb-8">Send Us a Message</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-medium text-evolve-text/70 mb-2">Name</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-xl bg-evolve-cream border-transparent focus:border-evolve-green focus:bg-white focus:ring-0 transition-colors" placeholder="Enter your name" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-evolve-text/70 mb-2">Email</label>
-                                        <input type="email" className="w-full px-4 py-3 rounded-xl bg-evolve-cream border-transparent focus:border-evolve-green focus:bg-white focus:ring-0 transition-colors" placeholder="Enter your email" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-evolve-text/70 mb-2">Subject</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-evolve-cream border-transparent focus:border-evolve-green focus:bg-white focus:ring-0 transition-colors" placeholder="Inquiry about..." />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-evolve-text/70 mb-2">Message</label>
-                                    <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-evolve-cream border-transparent focus:border-evolve-green focus:bg-white focus:ring-0 transition-colors" placeholder="How can we help you?"></textarea>
-                                </div>
-                                <button type="button" className="w-full bg-evolve-brown text-white font-bold py-4 rounded-xl hover:bg-evolve-green transition-colors flex items-center justify-center">
-                                    Send Message <Send size={18} className="ml-2" />
-                                </button>
-                            </form>
-                        </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="max-w-4xl mx-auto text-center mb-14"
+                    >
+                        <h2 className="text-4xl lg:text-5xl font-black font-display text-evolve-brown mb-4 tracking-tight">
+                            Company <span className="text-gradient">Information</span>
+                        </h2>
+                        <p className="text-evolve-text/60 text-lg">
+                            Click any card below to open directions, call us, send an email, or start a WhatsApp chat instantly.
+                        </p>
+                    </motion.div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                        {contactMethods.map((item, index) => (
+                            <motion.a
+                                key={item.title}
+                                href={item.href}
+                                target={item.openInNewTab ? '_blank' : undefined}
+                                rel={item.openInNewTab ? 'noreferrer' : undefined}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.7, delay: index * 0.1 }}
+                                whileHover={{ y: -6, scale: 1.01 }}
+                                className="group block p-8 glass bg-white/70 rounded-[2rem] hover:bg-white transition-all duration-300 shadow-xl shadow-evolve-brown/5"
+                            >
+                                <div className="flex items-start justify-between gap-4 mb-8">
+                                    <div className="bg-evolve-green/10 p-4 rounded-2xl group-hover:bg-evolve-green transition-colors">
+                                        <item.icon className="text-evolve-green group-hover:text-white transition-colors" size={28} />
+                                    </div>
+                                    <ArrowUpRight className="text-evolve-brown/30 group-hover:text-evolve-green transition-colors" size={24} />
+                                </div>
+
+                                <h3 className="text-2xl font-black font-display text-evolve-brown mb-3">{item.title}</h3>
+                                <p className="text-evolve-text/70 leading-relaxed whitespace-pre-line mb-8 min-h-24">{item.description}</p>
+
+                                <div className="inline-flex items-center rounded-full bg-evolve-brown text-white px-5 py-3 font-bold group-hover:bg-evolve-green transition-colors">
+                                    {item.actionLabel}
+                                </div>
+                            </motion.a>
+                        ))}
                     </div>
                 </div>
             </section>
-        </>
-    )
+        </div>
+    );
 }

@@ -22,10 +22,16 @@ A production-ready React + Vite + Tailwind CSS company portfolio website for Evo
     ```bash
     npm run dev
     ```
+    This starts both the Vite frontend and the Express API together.
 
 3.  **Build for Production**:
     ```bash
     npm run build
+    ```
+
+4.  **Run Production Build Locally**:
+    ```bash
+    npm run start
     ```
 
 ## Customization

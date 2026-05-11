@@ -16,19 +16,16 @@ const SingleBlog = lazy(() => import('./pages/SingleBlog'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-function App() {
+function RouteContent({ location }) {
   const [isLoading, setIsLoading] = useState(true);
-  const location = useLocation();
 
   useEffect(() => {
-    // Show preloader on every route change
-    setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, []);
 
   return (
     <>
@@ -55,6 +52,12 @@ function App() {
       )}
     </>
   );
+}
+
+function App() {
+  const location = useLocation();
+
+  return <RouteContent key={location.pathname} location={location} />;
 }
 
 export default App;

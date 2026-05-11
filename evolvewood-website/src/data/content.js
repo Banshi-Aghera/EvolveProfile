@@ -9,8 +9,8 @@ export const navigation = [
     { name: 'About', href: '/about' },
     { name: 'Why Us', href: '/why-us' },
     { name: 'Products', href: '/products' },
-    { name: 'Features', href: '/features' },
     { name: 'Applications', href: '/applications' },
+    { name: 'Features', href: '/features' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
 ];
@@ -41,6 +41,16 @@ export const products = [
         title: 'Rectangles Bars',
         description: 'Various sizes available: 85x25mm, 100x50mm, 20x85mm etc. Developed as per customer design.',
         image: '/images/rectangle-bar.jpg'
+    },
+    {
+        id: 'angle-profiles',
+        title: 'Angle Profiles',
+        description: 'L-shaped recycled plastic profiles for edges, framing, support, and protective packaging applications.',
+        image: '/images/angle-profile.svg',
+        frameClassName: 'bg-[#8e8e8e]',
+        imageClassName: 'object-contain p-5 mix-blend-normal',
+        previewFrameClassName: 'bg-[#8e8e8e]',
+        previewImageClassName: 'w-full max-w-4xl object-contain p-8'
     },
     {
         id: 'customized-profiles',

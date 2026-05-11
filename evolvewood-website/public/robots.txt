@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evolveprofileindustries.vercel.app/sitemap.xml
