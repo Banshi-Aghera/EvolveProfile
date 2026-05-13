@@ -2,20 +2,16 @@ import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 import { Mail, Phone, MapPin, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { contactInfo } from '../data/content';
 
-const address = ' Rajkot Highway, At- Sakatt Sanala Pin-363641, Ta- Morbi, Dist-Morbi';
-const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-const phoneNumbers = ['+91 81415 14311', '+91 97378 35434'];
-const email = 'evolveprofileindustries@gmail.com';
-const whatsappNumber = '+91 9265988217';
-const whatsappUrl = 'https://wa.me/919265955217?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.';
-const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`;
+const emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contactInfo.email)}`;
 
 const contactMethods = [
     {
         icon: MapPin,
         title: 'Visit Us',
-        description: address,
+        description: contactInfo.address,
         actionLabel: 'Open in Maps',
         href: mapUrl,
         openInNewTab: true,
@@ -23,14 +19,14 @@ const contactMethods = [
     {
         icon: Phone,
         title: 'Call Us',
-        description: phoneNumbers.join('\n'),
+        description: contactInfo.phoneNumbers.join('\n'),
         actionLabel: 'Call Now',
-        href: 'tel:+918141514311',
+        href: contactInfo.primaryPhoneHref,
     },
     {
         icon: Mail,
         title: 'Email Us',
-        description: email,
+        description: contactInfo.email,
         actionLabel: 'Open Email',
         href: emailComposeUrl,
         openInNewTab: true,
@@ -38,9 +34,9 @@ const contactMethods = [
     {
         icon: MessageCircle,
         title: 'WhatsApp',
-        description: whatsappNumber,
+        description: contactInfo.whatsappNumber,
         actionLabel: 'Chat on WhatsApp',
-        href: whatsappUrl,
+        href: contactInfo.whatsappUrl,
         openInNewTab: true,
     },
 ];

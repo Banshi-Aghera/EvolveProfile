@@ -15,6 +15,16 @@ export const navigation = [
     { name: 'Contact', href: '/contact' },
 ];
 
+export const contactInfo = {
+    address: 'Rajkot Highway, At- Sakat Sanala, Pin-363641, Ta- Morbi, Dist-Morbi',
+    addressLines: ['Rajkot Hwy, At- Sakat Sanala 363641', 'Ta- Morbi, Dist-Morbi'],
+    phoneNumbers: ['+91 81415 14311', '+91 97378 35434'],
+    primaryPhoneHref: 'tel:+918141514311',
+    email: 'evolveprofileindustries@gmail.com',
+    whatsappNumber: '+91 92659 55217',
+    whatsappUrl: 'https://wa.me/919265955217?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.',
+};
+
 export const features = [
     { name: 'Waterproof', icon: Droplets, description: 'Resistant to water damage and rot.' },
     { name: 'Fire Resistant', icon: Flame, description: 'High operational safety with fire retardant properties.' },

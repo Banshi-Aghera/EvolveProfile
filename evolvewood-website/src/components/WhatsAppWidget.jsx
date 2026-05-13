@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { contactInfo } from '../data/content';
 
 function WhatsAppIcon(props) {
     return (
@@ -12,7 +13,7 @@ function WhatsAppIcon(props) {
 export default function WhatsAppWidget() {
     return (
         <motion.a
-            href="https://wa.me/919265988217?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products."
+            href={contactInfo.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ scale: 0, opacity: 0 }}

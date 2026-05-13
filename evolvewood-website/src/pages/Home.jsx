@@ -28,7 +28,7 @@ export default function Home() {
     };
 
     return (
-        <div className="overflow-hidden bg-evolve-cream">
+        <div className="relative overflow-x-hidden bg-evolve-cream">
             <SEO title="Home" description="EvolveWood - Premium Eco-Industrial Recycled Material Manufacturer" />
 
             {/* Background Blobs */}
@@ -36,9 +36,9 @@ export default function Home() {
             <div className="blob bg-evolve-brown/20 w-[600px] h-[600px] top-[20%] right-[-200px]" style={{ animationDelay: '2s' }}></div>
 
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center pt-24 pb-12 lg:pt-32 lg:pb-24">
+            <section className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+                    <div className="grid grid-cols-1 items-center gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-8">
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
@@ -47,31 +47,31 @@ export default function Home() {
                         >
                             <motion.div 
                                 variants={fadeUpVariants}
-                                className="glass inline-flex items-center space-x-3 px-5 py-2.5 rounded-full mb-8"
+                                className="glass mb-8 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full px-4 py-2.5 sm:flex-nowrap sm:gap-3 sm:px-5"
                             >
                                 <span className="bg-evolve-green p-1.5 rounded-full text-white">
                                     <Leaf size={14} /> 
                                 </span>
-                                <span className="text-evolve-brown font-semibold text-sm tracking-wide">Eco-Friendly Industrial Solutions</span>
+                                <span className="text-evolve-brown text-xs font-semibold tracking-wide sm:text-sm">Eco-Friendly Industrial Solutions</span>
                             </motion.div>
                             
-                            <motion.h1 variants={fadeUpVariants} className="text-5xl md:text-7xl lg:text-[5.5rem] font-black font-display text-evolve-text mb-8 leading-[1.1] tracking-tight">
+                            <motion.h1 variants={fadeUpVariants} className="mb-8 font-display text-[clamp(3rem,14vw,5.5rem)] font-black leading-[1.05] tracking-tight text-evolve-text">
                                 Perfect way <br /> 
                                 <span className="text-gradient">to pack.</span>
                             </motion.h1>
                             
-                            <motion.p variants={fadeUpVariants} className="text-xl md:text-2xl text-evolve-text/70 mb-10 max-w-xl font-light leading-relaxed">
+                            <motion.p variants={fadeUpVariants} className="mb-10 max-w-xl text-lg leading-relaxed font-light text-evolve-text/70 sm:text-xl md:text-2xl">
                                 Evolve Profile Industries is delivering sustainable, high-performance recycled plastic lumber for industrial, civil, and furniture applications.
                             </motion.p>
                             
-                            <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row gap-5">
-                                <Link to="/products" className="group relative inline-flex items-center justify-center bg-evolve-brown text-white px-8 py-4 rounded-full font-bold overflow-hidden transition-transform hover:scale-105 shadow-[0_10px_40px_-10px_rgba(93,64,55,0.6)]">
+                            <motion.div variants={fadeUpVariants} className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-5">
+                                <Link to="/products" className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full bg-evolve-brown px-6 py-4 font-bold text-white shadow-[0_10px_40px_-10px_rgba(93,64,55,0.6)] transition-transform hover:scale-105 sm:w-auto sm:px-8">
                                     <span className="relative z-10 flex items-center">
                                         Explore Products <ArrowRight size={20} className="ml-3 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                     <div className="absolute inset-0 bg-evolve-green transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
                                 </Link>
-                                <Link to="/contact" className="group glass text-evolve-brown px-8 py-4 rounded-full font-bold hover:bg-white/60 transition-all flex items-center justify-center">
+                                <Link to="/contact" className="group glass flex w-full items-center justify-center rounded-full px-6 py-4 font-bold text-evolve-brown transition-all hover:bg-white/60 sm:w-auto sm:px-8">
                                     Contact Us
                                 </Link>
                             </motion.div>
@@ -81,9 +81,9 @@ export default function Home() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1.5, delay: 0.4 }}
-                            className="relative overflow-hidden lg:h-[700px] flex items-center justify-center lg:justify-end"
+                            className="relative flex items-center justify-center overflow-hidden lg:h-[700px] lg:justify-end"
                         >
-                            <div className="relative w-full max-w-lg aspect-[4/5] mt-10 lg:mt-0">
+                            <div className="relative mt-10 aspect-[4/5] w-full max-w-[min(100%,28rem)] lg:mt-0 lg:max-w-lg">
                                 <motion.div 
                                     animate={{ y: [0, -20, 0] }}
                                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -98,13 +98,13 @@ export default function Home() {
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 1 }}
-                                    className="absolute right-3 top-4 max-w-[220px] glass p-4 rounded-3xl shadow-2xl sm:right-4 sm:top-6 sm:max-w-[240px] sm:p-5 lg:-right-8 lg:top-1/4 lg:max-w-none lg:p-6"
+                                    className="absolute right-0 top-4 max-w-[180px] rounded-3xl glass p-3 shadow-2xl sm:right-4 sm:top-6 sm:max-w-[240px] sm:p-5 lg:-right-8 lg:top-1/4 lg:max-w-none lg:p-6"
                                 >
-                                    <div className="bg-evolve-green/20 p-4 rounded-2xl text-evolve-green mb-3 inline-block">
-                                        <ShieldCheck size={32} />
+                                    <div className="mb-3 inline-block rounded-2xl bg-evolve-green/20 p-3 text-evolve-green sm:p-4">
+                                        <ShieldCheck size={28} className="sm:size-8" />
                                     </div>
-                                    <div className="font-display font-bold text-evolve-brown text-xl">100% Termite Proof</div>
-                                    <div className="text-evolve-text/60 text-sm">Guaranteed Protection</div>
+                                    <div className="font-display text-lg font-bold text-evolve-brown sm:text-xl">100% Termite Proof</div>
+                                    <div className="text-xs text-evolve-text/60 sm:text-sm">Guaranteed Protection</div>
                                 </motion.div>
                                 
                                 {/* Recyle Icon Badge */}
@@ -112,9 +112,9 @@ export default function Home() {
                                     initial={{ opacity: 0, y: 50 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 1.2 }}
-                                    className="absolute bottom-4 left-3 bg-white p-4 rounded-full shadow-2xl border flex items-center justify-center text-evolve-green sm:bottom-6 sm:left-4 sm:p-5 lg:-left-6 lg:bottom-16"
+                                    className="absolute bottom-4 left-2 flex items-center justify-center rounded-full border bg-white p-3 text-evolve-green shadow-2xl sm:bottom-6 sm:left-4 sm:p-5 lg:-left-6 lg:bottom-16"
                                 >
-                                    <Recycle size={32} />
+                                    <Recycle size={28} className="sm:size-8" />
                                 </motion.div>
                             </div>
                         </motion.div>
