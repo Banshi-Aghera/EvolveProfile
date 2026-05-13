@@ -5,7 +5,8 @@ const siteName = 'Evolve Profile Industries';
 const brandName = 'EvolveWood';
 const defaultTitle = `${siteName} | Recycled Plastic Packaging Materials`;
 const defaultDescription = 'Evolve Profile Industries manufactures recycled plastic packaging materials, angle profiles, square bars, rectangular bars, customized profiles, and eco-friendly industrial solutions in India.';
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://evolveprofileindustries.vercel.app').replace(/\/$/, '');
+const runtimeOrigin = typeof window !== 'undefined' ? window.location.origin : '';
+const siteUrl = (import.meta.env.VITE_SITE_URL || runtimeOrigin || 'https://evolvewood-website.vercel.app').replace(/\/$/, '');
 const defaultImage = `${siteUrl}/images/logo.png`;
 
 export default function SEO({ title, description, image, url }) {
