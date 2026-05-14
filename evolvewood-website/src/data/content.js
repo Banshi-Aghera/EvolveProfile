@@ -18,7 +18,7 @@ export const navigation = [
 export const contactInfo = {
     address: 'Rajkot Highway, At- Sakat Sanala, Pin-363641, Ta- Morbi, Dist-Morbi',
     addressLines: ['Rajkot Hwy, At- Sakat Sanala 363641', 'Ta- Morbi, Dist-Morbi'],
-    phoneNumbers: ['+91 81415 14311', '+91 97378 35434'],
+    phoneNumbers: ['+91 81415 14311', '+91 97378 35404'],
     primaryPhoneHref: 'tel:+918141514311',
     email: 'evolveprofileindustries@gmail.com',
     whatsappNumber: '+91 9737835404',
