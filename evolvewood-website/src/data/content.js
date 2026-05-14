@@ -21,8 +21,8 @@ export const contactInfo = {
     phoneNumbers: ['+91 81415 14311', '+91 97378 35434'],
     primaryPhoneHref: 'tel:+918141514311',
     email: 'evolveprofileindustries@gmail.com',
-    whatsappNumber: '+91 92659 55217',
-    whatsappUrl: 'https://wa.me/919265955217?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.',
+    whatsappNumber: '+91 9737835404',
+    whatsappUrl: 'https://wa.me/919737835404?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.',
 };
 
 export const features = [
