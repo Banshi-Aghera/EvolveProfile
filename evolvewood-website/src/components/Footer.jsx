@@ -44,7 +44,12 @@ export default function Footer() {
                             <li className="flex items-center">
                                 <Phone size={18} strokeWidth={1.5} className="flex-shrink-0 text-evolve-green" />
                                 <span className="ml-3">
-                                    {contactInfo.phoneNumbers[0]} <br className="hidden md:block lg:hidden" /> <span className="hidden md:inline lg:hidden">|</span> {contactInfo.phoneNumbers[1]}
+                                    {contactInfo.phoneNumbers.map((phone, i) => (
+                                        <span key={i}>
+                                            {i > 0 && <><br className="hidden md:block lg:hidden" /> <span className="hidden md:inline lg:hidden">|</span> </>}
+                                            {phone}
+                                        </span>
+                                    ))}
                                 </span>
                             </li>
                             <li className="flex items-center">
