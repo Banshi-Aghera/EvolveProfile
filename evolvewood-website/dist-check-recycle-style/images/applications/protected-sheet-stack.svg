@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Protected Sheet Stack</title>
+  <desc id="desc">Stacked flat sheets separated and edge-protected for storage and shipment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b0825f"/>
+      <stop offset="100%" stop-color="#735842"/>
+    </linearGradient>
+    <linearGradient id="sheetFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d5b07f"/>
+      <stop offset="100%" stop-color="#9a754c"/>
+    </linearGradient>
+    <linearGradient id="edgeWrap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9ca6ad"/>
+      <stop offset="100%" stop-color="#d7dee3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g transform="translate(85 65)">
+    <g opacity=".22" fill="#5b4330">
+      <rect x="0" y="0" width="630" height="470" rx="16"/>
+    </g>
+    <g>
+      <g transform="translate(0 0)">
+        <polygon points="0 35 520 35 575 0 55 0" fill="url(#edgeWrap)"/>
+        <polygon points="0 65 520 65 575 30 55 30" fill="url(#sheetFace)"/>
+        <rect x="510" y="27" width="48" height="40" fill="#e7edf0"/>
+      </g>
+      <g transform="translate(18 78)">
+        <polygon points="0 35 520 35 575 0 55 0" fill="url(#edgeWrap)"/>
+        <polygon points="0 65 520 65 575 30 55 30" fill="url(#sheetFace)"/>
+        <rect x="510" y="27" width="48" height="40" fill="#e7edf0"/>
+      </g>
+      <g transform="translate(36 156)">
+        <polygon points="0 35 520 35 575 0 55 0" fill="url(#edgeWrap)"/>
+        <polygon points="0 65 520 65 575 30 55 30" fill="url(#sheetFace)"/>
+        <rect x="510" y="27" width="48" height="40" fill="#e7edf0"/>
+      </g>
+      <g transform="translate(54 234)">
+        <polygon points="0 35 520 35 575 0 55 0" fill="url(#edgeWrap)"/>
+        <polygon points="0 65 520 65 575 30 55 30" fill="url(#sheetFace)"/>
+        <rect x="510" y="27" width="48" height="40" fill="#e7edf0"/>
+      </g>
+      <g transform="translate(72 312)">
+        <polygon points="0 35 520 35 575 0 55 0" fill="url(#edgeWrap)"/>
+        <polygon points="0 65 520 65 575 30 55 30" fill="url(#sheetFace)"/>
+        <rect x="510" y="27" width="48" height="40" fill="#e7edf0"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -26,17 +26,72 @@ export const contactInfo = {
 };
 
 export const features = [
-    { name: 'Waterproof', icon: Droplets, description: 'Resistant to water damage and rot.' },
-    { name: 'Fire Resistant', icon: Flame, description: 'High operational safety with fire retardant properties.' },
-    { name: 'Termite Proof', icon: ShieldCheck, description: '100% termite and pest proof material.' },
-    { name: 'Chemical Resistant', icon: Factory, description: 'Withstands exposure to harsh chemicals.' },
-    { name: 'UV Protection', icon: Sun, description: 'UV stabilized to prevent fading and degradation.' },
-    { name: 'Recyclable', icon: Recycle, description: '100% recyclable and eco-friendly.' },
-    { name: 'Eco Friendly', icon: Leaf, description: 'Made from recycled materials, saving trees.' },
-    { name: 'Durable', icon: Award, description: 'Long-lasting and tough for heavy-duty use.' },
-    { name: 'Thermal Resistant', icon: Thermometer, description: 'Excellent thermal insulation properties.' },
-    { name: 'Easy Installation', icon: Hammer, description: 'Works like wood, no special tools required.' },
-    { name: 'No Odor', icon: Wind, description: 'Free from harmful chemical odors.' },
+    {
+        name: 'Fire Retardant',
+        icon: Flame,
+        image: '/images/ppt_extracted/ppt_image_6.jpg',
+        description: 'High fire-retardant properties ensure operational safety in industrial and civil environments.'
+    },
+    {
+        name: 'Chemical Resistant',
+        icon: Factory,
+        image: '/images/ppt_extracted/ppt_image_7.jpg',
+        description: 'Withstands exposure to harsh chemicals, acids, and industrial solvents without degradation.'
+    },
+    {
+        name: 'Eco Friendly',
+        icon: Leaf,
+        image: '/images/ppt_extracted/ppt_image_8.jpg',
+        description: 'Made from 100% recycled plastic waste, saving trees and reducing landfill burden.'
+    },
+    {
+        name: 'Termite Proof',
+        icon: ShieldCheck,
+        image: '/images/ppt_extracted/ppt_image_9.jpg',
+        description: '100% termite and pest proof — unlike traditional wood, no risk of biological decay.'
+    },
+    {
+        name: 'Easy Installation',
+        icon: Hammer,
+        image: '/images/ppt_extracted/ppt_image_10.jpg',
+        description: 'Works exactly like wood — can be cut, drilled, screwed, and nailed with standard tools.'
+    },
+    {
+        name: 'Waterproof',
+        icon: Droplets,
+        image: '/images/ppt_extracted/ppt_image_11.jpg',
+        description: 'Completely waterproof and moisture resistant. Will not rot, swell, or warp.'
+    },
+    {
+        name: 'Durable & Strong',
+        icon: Award,
+        image: '/images/ppt_extracted/ppt_image_12.jpg',
+        description: 'Exceptional structural strength and load-bearing capacity for heavy-duty industrial use.'
+    },
+    {
+        name: 'Recyclable',
+        icon: Recycle,
+        image: '/images/ppt_extracted/ppt_image_13.jpg',
+        description: '100% recyclable at end of life — a true circular economy product.'
+    },
+    {
+        name: 'UV Protection',
+        icon: Sun,
+        image: '/images/ppt_extracted/ppt_image_14.jpg',
+        description: 'UV stabilized to prevent fading, chalking, and degradation from prolonged sun exposure.'
+    },
+    {
+        name: 'No Odor',
+        icon: Wind,
+        image: '/images/ppt_extracted/ppt_image_15.jpg',
+        description: 'Completely odorless — free from harmful chemical smells and safe for all environments.'
+    },
+    {
+        name: 'Thermal Resistant',
+        icon: Thermometer,
+        image: '/images/ppt_extracted/ppt_image_16.jpg',
+        description: 'Excellent thermal insulation properties, reducing heat transfer in structures.'
+    },
 ];
 
 export const products = [

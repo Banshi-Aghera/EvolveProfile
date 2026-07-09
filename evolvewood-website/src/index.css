@@ -8,6 +8,7 @@
   --color-evolve-beige: #F5F5DC;
   --color-evolve-cream: #FAF9F6;
   --color-evolve-text: #3E2723;
+  --color-evolve-dark: #1a1612;
   --font-sans: "Inter", sans-serif;
   --font-display: "Outfit", sans-serif;
 }
@@ -18,9 +19,7 @@
   scroll-behavior: smooth;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
@@ -39,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
 
-/* Custom Utilities for Premium Look */
+/* ─── Glass Morphism ─── */
 .glass {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(16px);
@@ -54,19 +53,43 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 25px 60px -12px rgba(93, 64, 55, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ─── Text Gradients ─── */
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--color-evolve-brown), var(--color-evolve-green));
+  background-image: linear-gradient(135deg, var(--color-evolve-brown), var(--color-evolve-green));
 }
+
 .text-gradient-light {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #ffffff, var(--color-evolve-light-green));
+  background-image: linear-gradient(135deg, #ffffff, var(--color-evolve-light-green));
 }
 
+.text-gradient-green {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, var(--color-evolve-green), var(--color-evolve-light-green));
+}
+
+/* ─── Animated Blobs ─── */
 .blob {
   position: absolute;
   filter: blur(80px);
@@ -81,17 +104,153 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(-30px) scale(1.05); }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-evolve-cream);
-}
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-evolve-cream); }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-evolve-brown);
+  background: linear-gradient(to bottom, var(--color-evolve-brown), var(--color-evolve-green));
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-evolve-green);
+::-webkit-scrollbar-thumb:hover { background: var(--color-evolve-green); }
+
+/* ─── Hero & Dark Sections ─── */
+.hero-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1f1a 30%, #1a2e1a 70%, #0d0d0d 100%);
+}
+
+.hero-overlay {
+  background: radial-gradient(ellipse at 30% 50%, rgba(56, 142, 60, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 30%, rgba(93, 64, 55, 0.1) 0%, transparent 50%);
+}
+
+/* ─── Parallax Container ─── */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* ─── Marquee Animation ─── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Feature Icon Cards ─── */
+.feature-icon-card {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feature-icon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px -15px rgba(56, 142, 60, 0.25);
+}
+
+/* ─── Application Showcase ─── */
+.app-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+}
+
+/* ─── Grain Texture ─── */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Pulse Glow ─── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(56, 142, 60, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(56, 142, 60, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* ─── Shimmer Text ─── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--color-evolve-green) 0%, var(--color-evolve-light-green) 50%, var(--color-evolve-green) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Reveal Animation ─── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Line Divider ─── */
+.section-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-evolve-brown), transparent);
+  opacity: 0.15;
+}
+
+/* ─── Product 3D Hover ─── */
+.product-3d {
+  perspective: 800px;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-3d:hover {
+  transform: rotateY(-5deg) rotateX(3deg) scale(1.02);
+}
+
+/* ─── Stat Counter ─── */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.stat-card:hover::before {
+  left: 100%;
+}
+
+/* ─── Nav Pill Indicator ─── */
+.nav-pill-active {
+  background: linear-gradient(135deg, var(--color-evolve-green), var(--color-evolve-light-green));
+  color: white;
+  box-shadow: 0 4px 15px rgba(56, 142, 60, 0.3);
 }

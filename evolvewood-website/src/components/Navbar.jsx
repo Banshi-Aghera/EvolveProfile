@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
-import { navigation } from '../data/content';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { navigation, contactInfo } from '../data/content';
 import { cn } from '../lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Navbar() {
     const location = useLocation();
-
     return <NavbarInner key={location.pathname} />;
 }
 
@@ -18,12 +17,9 @@ function NavbarInner() {
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
-
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
             setScrolled(currentScrollY > 20);
-
             if (currentScrollY <= 20) {
                 setIsVisible(true);
             } else if (currentScrollY > lastScrollY) {
@@ -31,163 +27,177 @@ function NavbarInner() {
             } else {
                 setIsVisible(true);
             }
-
             lastScrollY = currentScrollY;
         };
-
         handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Prevent scrolling when mobile menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
         }
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
+        return () => { document.body.style.overflow = 'auto'; };
     }, [isOpen]);
 
     useEffect(() => {
-        if (isOpen) {
-            setIsVisible(true);
-        }
+        if (isOpen) setIsVisible(true);
     }, [isOpen]);
 
     return (
         <>
+            {/* Top bar - contact info */}
             <div className={cn(
-                "fixed top-0 inset-x-0 z-[60] flex justify-center px-3 pt-3 pointer-events-none transition-transform duration-300 sm:px-4 sm:pt-4",
-                isVisible ? "translate-y-0" : "-translate-y-full"
+                "fixed top-0 inset-x-0 z-[61] bg-evolve-brown text-white transition-all duration-500",
+                scrolled ? "h-0 opacity-0 overflow-hidden" : "h-8 opacity-100"
+            )}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between text-xs">
+                    <span className="hidden sm:flex items-center gap-2 text-white/70">
+                        <Phone size={12} /> {contactInfo.phoneNumbers[0]}
+                    </span>
+                    <span className="text-white/50 text-[10px] tracking-widest uppercase font-bold">EvolveWood — Save The Nature</span>
+                    <a href={`mailto:${contactInfo.email}`} className="text-white/70 hover:text-white transition-colors hidden sm:block">{contactInfo.email}</a>
+                </div>
+            </div>
+
+            {/* Main Navbar */}
+            <div className={cn(
+                "fixed inset-x-0 z-[60] flex justify-center px-3 pointer-events-none transition-all duration-500",
+                scrolled ? "top-0 pt-2" : "top-8 pt-2",
+                isVisible ? "translate-y-0" : "-translate-y-[calc(100%+3rem)]"
             )}>
                 <nav className={cn(
-                    "pointer-events-auto flex w-full min-w-0 items-center justify-between rounded-full border transition-all duration-500",
+                    "pointer-events-auto flex w-full min-w-0 items-center justify-between transition-all duration-500",
                     scrolled
-                        ? "max-w-5xl bg-white/90 px-4 py-2.5 shadow-xl backdrop-blur-2xl sm:px-5 md:px-6"
-                        : "max-w-7xl bg-white/60 px-4 py-3 shadow-lg backdrop-blur-xl sm:px-6 md:px-8"
+                        ? "max-w-6xl bg-white/95 backdrop-blur-2xl rounded-xl px-4 py-2 shadow-xl shadow-evolve-brown/10 sm:px-6 border border-evolve-brown/5"
+                        : "max-w-7xl bg-white/70 backdrop-blur-xl rounded-xl px-4 py-2 shadow-lg sm:px-6 md:px-8 border border-white/50"
                 )}>
                     {/* Logo */}
                     <Link to="/" className="z-50 flex min-w-0 shrink items-center focus:outline-none">
                         <img
                             src="/images/logo.png"
-                            alt="EvolveWood"
+                            alt="EvolveWood - Save The Nature"
                             className={cn(
-                                "h-auto max-w-[132px] object-contain transition-all duration-500 sm:max-w-[160px] md:max-w-[190px] lg:max-w-none",
-                                scrolled ? "max-h-7 sm:max-h-8 lg:max-h-10" : "max-h-8 sm:max-h-10 lg:max-h-12"
+                                "h-auto object-contain transition-all duration-500",
+                                scrolled ? "max-h-7 sm:max-h-8" : "max-h-7 sm:max-h-9"
                             )}
                         />
                     </Link>
 
-                    {/* Desktop Menu - Clean Line Indicator */}
-                    <div className="hidden lg:flex items-center space-x-8">
+                    {/* Desktop Menu - Pill Style */}
+                    <div className="hidden lg:flex items-center gap-1">
                         {navigation.map((item) => (
                             <NavLink
                                 key={item.name}
                                 to={item.href}
-                                className="relative py-2 text-sm font-semibold tracking-wide transition-colors group"
-                            >
-                                {({ isActive }) => (
-                                    <>
-                                        <span className={isActive ? "text-evolve-green" : "text-evolve-brown/80 group-hover:text-evolve-brown"}>
-                                            {item.name}
-                                        </span>
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="nav-line"
-                                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-evolve-green rounded-full"
-                                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                            />
-                                        )}
-                                        {!isActive && (
-                                            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-evolve-brown/30 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 rounded-full" />
-                                        )}
-                                    </>
+                                className={({ isActive }) => cn(
+                                    "relative px-3 py-1.5 text-sm font-semibold tracking-wide rounded-lg transition-all duration-300",
+                                    isActive
+                                        ? "nav-pill-active"
+                                        : "text-evolve-brown/70 hover:text-evolve-brown hover:bg-evolve-brown/5"
                                 )}
+                            >
+                                {item.name}
                             </NavLink>
                         ))}
                     </div>
 
-
-                    {/* Mobile Button Open */}
-                    <div className="lg:hidden relative z-[70]">
-                        <button
-                            onClick={() => setIsOpen(true)}
-                            className="rounded-xl border border-white/50 bg-white/50 p-2 text-evolve-brown shadow-sm transition-colors hover:bg-white focus:outline-none active:scale-95"
-                            aria-label="Open menu"
-                        >
-                            <Menu size={22} />
-                        </button>
+                    {/* CTA + Mobile Toggle */}
+                    <div className="flex items-center gap-3">
+                        <div className="lg:hidden relative z-[70]">
+                            <button
+                                onClick={() => setIsOpen(true)}
+                                className="rounded-xl border border-evolve-brown/10 bg-evolve-brown/5 p-2.5 text-evolve-brown transition-colors hover:bg-evolve-brown/10 focus:outline-none active:scale-95"
+                                aria-label="Open menu"
+                            >
+                                <Menu size={20} />
+                            </button>
+                        </div>
                     </div>
                 </nav>
             </div>
 
-            {/* Minimal Mobile Menu Full Screen Overlay */}
+            {/* Full-Screen Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed inset-0 z-[100] flex flex-col bg-white/95 backdrop-blur-3xl overflow-hidden pointer-events-auto"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed inset-0 z-[100] flex flex-col bg-evolve-cream overflow-hidden"
                     >
-                        {/* Mobile Menu Header - Matching main nav positioning */}
-                        <div className="flex shrink-0 items-center justify-between border-b border-evolve-brown/5 p-4 sm:p-6 md:p-8">
+                        {/* Background pattern */}
+                        <div className="absolute inset-0 opacity-[0.03]">
+                            <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-evolve-green blur-[120px]"></div>
+                            <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-evolve-brown blur-[120px]"></div>
+                        </div>
+
+                        {/* Mobile Header */}
+                        <div className="flex shrink-0 items-center justify-between p-5 sm:p-6 relative z-10">
                             <Link to="/" onClick={() => setIsOpen(false)} className="focus:outline-none">
-                                <img
-                                    src="/images/logo.png"
-                                    alt="EvolveWood"
-                                    className="h-7 max-w-[150px] object-contain sm:h-8 sm:max-w-[180px]"
-                                />
+                                <img src="/images/logo.png" alt="EvolveWood" className="h-8 object-contain" />
                             </Link>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="p-2 rounded-xl focus:outline-none transition-colors bg-evolve-brown/5 text-evolve-brown hover:bg-evolve-brown/10 active:scale-95"
+                                className="p-2.5 rounded-xl bg-evolve-brown/5 text-evolve-brown hover:bg-evolve-brown/10 transition-colors active:scale-95"
                                 aria-label="Close menu"
                             >
-                                <X size={24} strokeWidth={1.5} />
+                                <X size={22} />
                             </button>
                         </div>
 
-                        {/* Minimal Scrollable Nav Links */}
-                        <div className="flex flex-1 flex-col overflow-y-auto px-5 py-8 sm:px-8 sm:py-12">
-                            <div className="flex flex-col space-y-8 w-full">
+                        {/* Nav Links */}
+                        <div className="flex flex-1 flex-col overflow-y-auto px-6 py-4 sm:px-8 relative z-10">
+                            <div className="flex flex-col gap-2">
                                 {navigation.map((item, i) => (
                                     <motion.div
                                         key={item.name}
-                                        initial={{ opacity: 0, x: -20 }}
+                                        initial={{ opacity: 0, x: -30 }}
                                         animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.1 + (i * 0.05), type: "spring", stiffness: 100 }}
+                                        transition={{ delay: 0.05 + (i * 0.04), type: "spring", stiffness: 120 }}
                                     >
                                         <NavLink
                                             to={item.href}
                                             onClick={() => setIsOpen(false)}
                                             className={({ isActive }) => cn(
-                                                "flex items-center justify-between text-2xl font-medium tracking-wide transition-all border-b border-evolve-brown/5 pb-4",
-                                                isActive ? "text-evolve-green" : "text-evolve-brown/70 hover:text-evolve-brown"
+                                                "flex items-center justify-between text-xl font-semibold py-4 px-4 rounded-2xl transition-all",
+                                                isActive
+                                                    ? "bg-evolve-green/10 text-evolve-green"
+                                                    : "text-evolve-brown/70 hover:bg-evolve-brown/5 hover:text-evolve-brown"
                                             )}
                                         >
                                             {item.name}
-                                            <ArrowRight size={20} className="text-evolve-brown/20" strokeWidth={1} />
+                                            <ArrowRight size={18} className="opacity-30" />
                                         </NavLink>
                                     </motion.div>
                                 ))}
-
-                                <motion.div
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + (navigation.length * 0.05) }}
-                                    className="pt-8 mt-auto"
-                                >
-                                    <Link onClick={() => setIsOpen(false)} to="/contact" className="flex items-center justify-center bg-evolve-brown text-white px-8 py-4 rounded-xl font-medium text-lg w-full hover:bg-evolve-green transition-colors shadow-lg active:scale-95 text-center">
-                                        Get a Quote
-                                    </Link>
-                                </motion.div>
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                                className="mt-auto pt-8 space-y-4"
+                            >
+                                <Link
+                                    onClick={() => setIsOpen(false)}
+                                    to="/contact"
+                                    className="flex items-center justify-center bg-evolve-brown text-white px-8 py-4 rounded-2xl font-bold text-lg w-full hover:bg-evolve-green transition-colors shadow-xl active:scale-[0.98]"
+                                >
+                                    Get a Quote
+                                    <ArrowRight size={18} className="ml-2" />
+                                </Link>
+                                <a
+                                    href={contactInfo.primaryPhoneHref}
+                                    className="flex items-center justify-center gap-2 text-evolve-brown/60 text-sm font-medium"
+                                >
+                                    <Phone size={14} /> {contactInfo.phoneNumbers[0]}
+                                </a>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}

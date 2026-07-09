@@ -1,39 +1,167 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, X, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
-import ProductCard from '../components/ProductCard';
 import { products } from '../data/content';
-import { motion } from 'framer-motion';
+import { cn } from '../lib/utils';
+
+const fade = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
+};
+const stagger = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } };
 
 export default function Products() {
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
     return (
-        <div className="overflow-hidden bg-evolve-cream min-h-screen">
-            <SEO title="Products" description="Explore our range of recycled lumber products including square bars, rectangles, and customized profiles." />
+        <div className="overflow-hidden bg-white min-h-screen">
+            <SEO
+                title="Products | EvolveWood - Recycled Plastic Lumber Profiles"
+                description="Browse EvolveWood product range: Square bars, rectangle bars, angle profiles, customized profiles, and fabricated products. Made from 100% recycled plastic."
+                url="/products"
+            />
             
             <PageHeader title="Product Profiles Range" subtitle="High-strength, durable, and eco-friendly alternatives to wood." />
 
-            <section className="py-12 lg:py-24 relative">
-                {/* Decorative Blobs */}
-                <div className="blob bg-evolve-green/10 w-[800px] h-[800px] top-[10%] left-[-300px]"></div>
-                <div className="blob bg-evolve-light-green/10 w-[600px] h-[600px] bottom-[10%] right-[-200px]"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Editorial Text & Collage Image Section */}
+            <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     <motion.div 
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={{
-                            visible: {
-                                transition: { staggerChildren: 0.1 }
-                            }
-                        }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
                     >
-                        {products.map((product, idx) => (
-                            <ProductCard key={product.id} product={product} index={idx} />
-                        ))}
+                        <h2 className="text-4xl md:text-5xl font-black font-display text-evolve-brown mb-8 leading-tight">
+                            The Smarter <span className="text-evolve-green">Alternative.</span>
+                        </h2>
+                        <div className="space-y-6 text-lg text-evolve-text/70 leading-relaxed font-medium">
+                            <p>
+                                Made from 100% recycled materials, plastic lumber is the perfect alternative to wood.
+                            </p>
+                            <p>
+                                Plastic lumber can be cut with a regular saw, routed, drilled, nailed and screwed. Our product is available in a variety of dimensional sizes similar to regular wood, such as: 2x2, 2x3, 2x4, 2x6, 2x8, 4x4 and 6x6. We offer it in both a <strong>Standard Grade</strong>, typically grey/black in colour and a <strong>Premium Grade</strong> in a variety of colours.
+                            </p>
+                            <p>
+                                The fact that it’s made of plastic means that it’s <strong>Built to Last</strong>. Plastic lumber is environmentally friendly and made from 100% recycled materials. It doesn’t rot or splinter, and it’s very economically priced. 
+                            </p>
+                            <p>
+                                Available in a variety of colours eliminating the need for painting, staining or the use of other preservatives. Plastic Lumber can be used for many building projects including benches, decks, docks, fences, planter boxes, picnic tables, landscaping and boardwalks.
+                            </p>
+                            <p className="text-sm font-bold text-evolve-brown/50 uppercase tracking-widest mt-8">
+                                Copyright © Evolve Profile Industries
+                            </p>
+                        </div>
+                    </motion.div>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="rounded-[2.5rem] overflow-hidden shadow-2xl shadow-evolve-brown/10 relative"
+                    >
+                        {/* 
+                            IMPORTANT: Replace this src with the path to the collage image you uploaded! 
+                            For example: /images/user_uploads/product_collage.jpg 
+                        */}
+                        <img 
+                            src="/images/applications/marine.jpg" 
+                            alt="Product Collage" 
+                            className="w-full h-auto object-cover" 
+                        />
                     </motion.div>
                 </div>
             </section>
+
+            {/* Product Catalogue Grid */}
+            <section className="py-24 bg-evolve-cream border-t border-evolve-brown/5 relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="mb-16 text-center max-w-4xl mx-auto">
+                        <span className="text-evolve-green font-bold tracking-[0.25em] uppercase text-xs block mb-4">Our Catalogue</span>
+                        <h2 className="text-4xl md:text-5xl font-black font-display text-evolve-brown leading-tight">
+                            Available Profiles
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {products.map((product) => (
+                            <motion.div 
+                                key={product.id} 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <button 
+                                    onClick={() => setSelectedProduct(product)}
+                                    className="w-full group flex flex-col bg-white rounded-[2rem] p-6 text-left hover:shadow-2xl hover:shadow-evolve-brown/10 transition-all duration-500 border border-evolve-brown/5"
+                                >
+                                    <div className="w-full aspect-square rounded-2xl overflow-hidden bg-evolve-cream mb-6 relative">
+                                        <div className="absolute inset-0 bg-evolve-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                                        {product.image ? (
+                                            <img src={product.image} alt={product.title} className={cn("w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110", product.imageClassName || "mix-blend-multiply")} />
+                                        ) : (
+                                            <div className="flex h-full w-full items-center justify-center font-display text-4xl font-black uppercase text-evolve-brown/30">{product.title.split(' ')[0]}</div>
+                                        )}
+                                    </div>
+                                    <h3 className="text-2xl font-black font-display text-evolve-brown mb-2 group-hover:text-evolve-green transition-colors">{product.title}</h3>
+                                    <p className="text-evolve-text/60 text-sm leading-relaxed mb-4 line-clamp-2">{product.description}</p>
+                                    
+                                    <div className="mt-auto flex items-center text-evolve-green font-bold text-sm uppercase tracking-wider">
+                                        View Details <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </button>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <AnimatePresence>
+                {selectedProduct && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProduct(null)}
+                        className="fixed inset-0 z-[120] flex items-center justify-center bg-evolve-brown/60 p-4 backdrop-blur-md"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            transition={{ duration: 0.3 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="relative w-full max-w-4xl overflow-hidden rounded-[2.5rem] bg-white p-8 lg:p-12 shadow-2xl flex flex-col md:flex-row gap-10"
+                        >
+                            <button
+                                onClick={() => setSelectedProduct(null)}
+                                className="absolute right-6 top-6 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-evolve-cream text-evolve-brown hover:bg-evolve-green hover:text-white transition-colors"
+                            >
+                                <X size={20} />
+                            </button>
+
+                            <div className="w-full md:w-1/2 rounded-[2rem] bg-evolve-cream flex items-center justify-center p-8">
+                                {selectedProduct.image && (
+                                    <img src={selectedProduct.image} alt={selectedProduct.title} className={cn("w-full h-auto", selectedProduct.previewImageClassName || selectedProduct.imageClassName || "object-contain mix-blend-multiply")} />
+                                )}
+                            </div>
+
+                            <div className="w-full md:w-1/2 flex flex-col justify-center">
+                                <span className="text-evolve-green font-bold tracking-[0.2em] uppercase text-xs block mb-3">Profile Details</span>
+                                <h3 className="text-3xl lg:text-4xl font-black font-display text-evolve-brown mb-6">{selectedProduct.title}</h3>
+                                <p className="text-base text-evolve-text/70 leading-relaxed mb-8">{selectedProduct.description}</p>
+                                <button className="bg-evolve-brown text-white px-8 py-3 rounded-full font-bold hover:bg-evolve-green transition-colors w-fit">
+                                    Inquire Now
+                                </button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

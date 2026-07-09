@@ -12,8 +12,8 @@ export default function Footer() {
                             <img src="/images/logo.png" alt="EvolveWood" className="h-12 w-auto object-contain brightness-0 invert" />
                         </Link>
                         <p className="text-white/70 text-sm leading-relaxed max-w-sm font-medium">
-                            Evolve Profile Industries is engaged in the manufacturing of sustainable plastic packaging materials.
-                            Dedicated to innovation and environmental responsibility from start to finish.
+                            Evolve Profile Industries is engaged in manufacturing of recycled plastic packaging materials.
+                            With rich experience and a team of professionals, we cater the industry with innovative, eco-friendly products. Save The Nature.
                         </p>
                     </div>
 

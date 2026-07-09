@@ -1,0 +1,23 @@
+# robots.txt — evolveprofileindustries.com
+# Generated for Evolve Profile Industries | Evolvewood & Evolveprofile Industries
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Block admin, private, or API routes from indexing
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow Google Image Bot (good for product images)
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location — tells Google exactly where to find it
+Sitemap: https://evolveprofileindustries.com/sitemap.xml

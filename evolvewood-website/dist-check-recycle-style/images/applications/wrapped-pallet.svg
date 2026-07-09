@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Wrapped Pallet</title>
+  <desc id="desc">Shrink-wrapped palletized package for industrial storage and transport.</desc>
+  <defs>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#585d67"/>
+      <stop offset="100%" stop-color="#353941"/>
+    </linearGradient>
+    <linearGradient id="pallet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22272e"/>
+      <stop offset="100%" stop-color="#0e1116"/>
+    </linearGradient>
+    <linearGradient id="wrap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e5f3ff" stop-opacity=".78"/>
+      <stop offset="100%" stop-color="#d0d8e6" stop-opacity=".48"/>
+    </linearGradient>
+    <linearGradient id="load" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#88735a"/>
+      <stop offset="100%" stop-color="#5c4c3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#8c939b"/>
+  <rect y="360" width="800" height="240" fill="url(#ground)"/>
+  <rect x="420" y="75" width="230" height="120" rx="8" fill="#3b4b69" opacity=".75"/>
+  <g transform="translate(135 180)">
+    <rect x="55" y="205" width="410" height="58" rx="8" fill="url(#pallet)"/>
+    <g fill="#1f242b">
+      <rect x="80" y="215" width="54" height="38" rx="3"/>
+      <rect x="158" y="215" width="54" height="38" rx="3"/>
+      <rect x="236" y="215" width="54" height="38" rx="3"/>
+      <rect x="314" y="215" width="54" height="38" rx="3"/>
+    </g>
+    <rect x="90" y="74" width="340" height="145" rx="20" fill="url(#load)"/>
+    <rect x="100" y="86" width="320" height="121" rx="14" fill="#7ca1b9"/>
+    <rect x="90" y="74" width="340" height="145" rx="20" fill="url(#wrap)"/>
+    <path d="M105 90c80 30 160 26 240 7 34-8 53-7 82 0" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="8"/>
+    <path d="M98 120c97 26 210 22 334 5" fill="none" stroke="#ffffff" stroke-opacity=".42" stroke-width="7"/>
+    <path d="M96 148c112 21 226 20 334 4" fill="none" stroke="#ffffff" stroke-opacity=".38" stroke-width="7"/>
+    <path d="M96 176c116 18 228 18 334 3" fill="none" stroke="#ffffff" stroke-opacity=".34" stroke-width="7"/>
+    <rect x="138" y="68" width="10" height="160" fill="#f0f0f0" opacity=".9"/>
+    <rect x="250" y="68" width="10" height="160" fill="#f0f0f0" opacity=".9"/>
+    <rect x="362" y="68" width="10" height="160" fill="#f0f0f0" opacity=".9"/>
+  </g>
+</svg>

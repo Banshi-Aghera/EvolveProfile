@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Angle Profile</title>
+  <desc id="desc">White angle profile product shot on a studio gray background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b9b9b" />
+      <stop offset="100%" stop-color="#757575" />
+    </linearGradient>
+    <linearGradient id="topFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d8d8d8" />
+    </linearGradient>
+    <linearGradient id="frontFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1f1f1" />
+      <stop offset="100%" stop-color="#c8c8c8" />
+    </linearGradient>
+    <linearGradient id="innerFace" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151515" />
+      <stop offset="100%" stop-color="#4a4a4a" />
+    </linearGradient>
+    <radialGradient id="shadowFade" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity=".42" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" />
+    </filter>
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="10" dy="20" stdDeviation="18" flood-color="#000000" flood-opacity=".32" />
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)" />
+  <ellipse cx="420" cy="470" rx="210" ry="78" fill="url(#shadowFade)" filter="url(#softShadow)" />
+  <g filter="url(#dropShadow)">
+    <polygon points="118,120 368,120 676,430 422,430" fill="url(#topFace)" />
+    <polygon points="368,120 427,120 734,430 676,430" fill="url(#frontFace)" />
+    <polygon points="422,430 676,430 620,487 364,487" fill="url(#innerFace)" />
+    <polygon points="350,120 390,120 698,430 657,430" fill="#ebebeb" opacity=".88" />
+  </g>
+</svg>
