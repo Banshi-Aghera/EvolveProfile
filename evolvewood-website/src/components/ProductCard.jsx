@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, X } from 'lucide-react';
+import { ArrowUpRight, MessageCircle, X } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export default function ProductCard({ product, index }) {
@@ -133,9 +133,21 @@ export default function ProductCard({ product, index }) {
                                 />
                             </div>
 
-                            <div className="px-4 pb-2 pt-5">
-                                <h3 className="text-3xl font-black font-display text-evolve-brown">{product.title}</h3>
-                                <p className="mt-2 max-w-3xl text-base text-evolve-text/70">{product.description}</p>
+                            <div className="px-4 pb-6 pt-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                                <div>
+                                    <h3 className="text-3xl font-black font-display text-evolve-brown">{product.title}</h3>
+                                    <p className="mt-2 max-w-3xl text-base text-evolve-text/70">{product.description}</p>
+                                </div>
+                                <a
+                                    href={`https://wa.me/919737835404?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20*${encodeURIComponent(product.title.trim())}*%20product.%20Please%20share%20more%20details.`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="flex-shrink-0 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-6 py-3 rounded-full shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                                >
+                                    <MessageCircle size={20} />
+                                    Inquire Now
+                                </a>
                             </div>
                         </motion.div>
                     </motion.div>

@@ -108,15 +108,16 @@ export const products = [
         image: '/images/rectangle-bar.jpg'
     },
     {
-        id: 'angle-profiles',
-        title: 'Angle Profiles',
+        id: 'Round Bars ',
+        title: 'Round Bars ',
         description: 'L-shaped recycled plastic profiles for edges, framing, support, and protective packaging applications.',
-        image: '/images/angle-profile.svg',
+        image: '/images/Round-bars.jpeg',
         frameClassName: 'bg-[#8e8e8e]',
         imageClassName: 'object-contain p-5 mix-blend-normal',
         previewFrameClassName: 'bg-[#8e8e8e]',
         previewImageClassName: 'w-full max-w-4xl object-contain p-8'
     },
+
     {
         id: 'customized-profiles',
         title: 'Customized Profiles',
@@ -128,7 +129,18 @@ export const products = [
         title: 'Fabricated Products',
         description: 'Saddles, Dunnage, Pallets, and other custom fabrication solutions.',
         image: '/images/fabricated-product.jpg'
-    }
+    },
+    {
+        id: 'Corner protection ',
+        title: 'Corner protection ',
+        description: 'L-shaped recycled plastic profiles for edges, framing, support, and protective packaging applications.',
+        image: '/images/Corner-protection.jpeg',
+        frameClassName: 'bg-[#8e8e8e]',
+        imageClassName: 'object-contain p-5 mix-blend-normal',
+        previewFrameClassName: 'bg-[#8e8e8e]',
+        previewImageClassName: 'w-full max-w-4xl object-contain p-8'
+    },
+
 ];
 
 export const industries = [

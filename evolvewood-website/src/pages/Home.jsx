@@ -14,12 +14,12 @@ const stagger = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { s
 const reveal = { hidden: { opacity: 0, y: 20, filter: 'blur(8px)' }, visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8 } } };
 
 const industries = [
-    { title: "Industrial", icon: Factory, image: "/images/applications/application1.jpg", desc: "Pipe support, steel packaging, machinery bases" },
+    { title: "Industrial", icon: Factory, image: "/images/applications/industrial.jpg", desc: "Pipe support, steel packaging, machinery bases" },
     { title: "Civil & Infra", icon: Building2, image: "/images/applications/application44.jpeg", desc: "Bridges, fencing, boardwalks, marine structures" },
     { title: "Agriculture", icon: Leaf, image: "/images/applications/application2.jpg", desc: "Raised beds, boundary fencing, farm support" },
-    { title: "Storage", icon: Warehouse, image: "/images/applications/war.png", desc: "Warehouse dunnage, pallet alternatives" },
+    { title: "Storage", icon: Warehouse, image: "/images/applications/storage/godown.jpg", desc: "Warehouse dunnage, pallet alternatives" },
     { title: "Automobile", icon: Car, image: "/images/applications/automobile.jpeg", desc: "Wheel chocks, transport packaging" },
-    { title: "Furniture", icon: Armchair, image: "/images/applications/bench.jpeg", desc: "Benches, tables, outdoor seating" },
+    { title: "Furniture", icon: Armchair, image: "/images/applications/furniture1.jpeg", desc: "Benches, tables, outdoor seating" },
 ];
 
 export default function Home() {
