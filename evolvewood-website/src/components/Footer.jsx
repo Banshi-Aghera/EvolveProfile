@@ -25,11 +25,11 @@ export default function Footer() {
                                 if (item === 'Home') path = '/';
                                 if (item === 'About Us') path = '/about';
                                 return (
-                                <li key={item}>
-                                    <Link to={path} className="group flex items-center hover:text-evolve-green transition-colors">
-                                        {item}
-                                    </Link>
-                                </li>
+                                    <li key={item}>
+                                        <Link to={path} className="group flex items-center hover:text-evolve-green transition-colors">
+                                            {item}
+                                        </Link>
+                                    </li>
                                 );
                             })}
                         </ul>
@@ -65,13 +65,8 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium text-white/50">
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-xs font-medium text-white/50">
                     <p>&copy; {new Date().getFullYear()} Evolve Profile Industries. All rights reserved.</p>
-                    <div className="mt-4 md:mt-0 space-x-6">
-                        <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
-                        <Link to="#" className="hover:text-white transition-colors">Sitemap</Link>
-                    </div>
                 </div>
             </div>
         </footer>
