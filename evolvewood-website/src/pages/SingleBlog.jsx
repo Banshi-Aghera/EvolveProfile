@@ -61,7 +61,12 @@ export default function SingleBlog() {
                             <p className="lead text-2xl text-evolve-brown font-medium mb-10 leading-relaxed font-display">{blog.excerpt}</p>
                             
                             <div className="bg-gradient-to-br from-evolve-green/10 to-transparent p-10 rounded-[2rem] border-l-8 border-evolve-green mb-10 shadow-inner">
-                                <p className="italic text-evolve-brown text-xl leading-relaxed m-0 font-medium">"{blog.content}"</p>
+                                <p className="italic text-evolve-brown text-xl leading-relaxed m-0 font-medium whitespace-pre-wrap">"{blog.content}"</p>
+                                {blog.insideImage && (
+                                    <div className="mt-10 flex justify-center">
+                                        <img src={blog.insideImage} alt={`${blog.title} inside`} className="rounded-2xl max-w-full h-auto shadow-lg object-contain bg-white/50 p-2 border border-evolve-green/20" />
+                                    </div>
+                                )}
                                 <p className="text-sm mt-6 text-evolve-text/60 font-bold uppercase tracking-widest">[Full Content Area]</p>
                             </div>
                             

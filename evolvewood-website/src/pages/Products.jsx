@@ -118,15 +118,24 @@ export default function Products() {
                         ))}
                     </div>
 
-                    {/* Download Brochure Button */}
-                    <div className="mt-12 flex justify-center">
+                    {/* Download Brochure Buttons */}
+                    <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
                         <a
                             href="/Brochure/EVOLVE WOOD.pdf"
                             download="EvolveWood-Brochure.pdf"
-                            className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg"
+                            className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg text-center"
                         >
                             <Download size={18} />
-                            Download Brochure
+                            Download EvolveWood Brochure
+                        </a>
+
+                        <a
+                            href="/Brochure/EVOLVE CORNER PROTECTION.pdf"
+                            download="EvolveWood-Corner-Protection-Brochure.pdf"
+                            className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-10 py-4 rounded-full font-bold text-base transition-all duration-300 hover:scale-105 shadow-lg text-center"
+                        >
+                            <Download size={18} />
+                            Download Corner Protection Brochure
                         </a>
                     </div>
                 </div>
@@ -183,7 +192,7 @@ export default function Products() {
                                     className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 w-fit mt-3"
                                 >
                                     <Download size={18} />
-                                    Download Brochure
+                                    Download EvolveWood Brochure
                                 </a>
                             </div>
                         </motion.div>
