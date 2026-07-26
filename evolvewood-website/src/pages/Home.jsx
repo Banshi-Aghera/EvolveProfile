@@ -270,7 +270,7 @@ export default function Home() {
 
                     <motion.div variants={fade} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mt-12">
                         <Link to="/products" className="group inline-flex items-center text-evolve-brown font-bold text-lg">
-                            <span className="border-b-2 border-evolve-brown/20 pb-1 group-hover:border-evolve-green transition-colors">View Full Catalogue</span>
+                            <span className="border-b-2 border-evolve-brown/20 pb-1 group-hover:border-evolve-green transition-colors">View All Product</span>
                             <span className="ml-3 bg-evolve-brown/5 p-2 rounded-full group-hover:bg-evolve-green group-hover:text-white transition-colors"><ArrowUpRight size={18} /></span>
                         </Link>
                     </motion.div>
