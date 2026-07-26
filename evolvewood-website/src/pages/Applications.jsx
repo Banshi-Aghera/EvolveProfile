@@ -70,6 +70,8 @@ const applicationData = [
                     "/images/applications/subapplications/marin2.jpg",
                     "/images/applications/subapplications/marin3.jpg",
                     "/images/applications/subapplications/marin4.jpg",
+                    "/images/applications/subapplications/marin5.jpg",
+                    "/images/applications/subapplications/marin6.jpg",
                 ], description: "Waterproof profiles ideal for docks, jetties, and coastal infrastructure."
             },
             {
