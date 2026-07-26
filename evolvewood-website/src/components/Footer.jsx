@@ -20,13 +20,18 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-white/40">Company</h3>
                         <ul className="space-y-4 text-white/80 text-sm font-medium">
-                            {['Home', 'About Us', 'Products', 'Applications', 'Contact'].map((item) => (
+                            {['Home', 'About Us', 'Products', 'Applications', 'Contact'].map((item) => {
+                                let path = `/${item.toLowerCase().replace(' ', '-')}`;
+                                if (item === 'Home') path = '/';
+                                if (item === 'About Us') path = '/about';
+                                return (
                                 <li key={item}>
-                                    <Link to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} className="group flex items-center hover:text-evolve-green transition-colors">
+                                    <Link to={path} className="group flex items-center hover:text-evolve-green transition-colors">
                                         {item}
                                     </Link>
                                 </li>
-                            ))}
+                                );
+                            })}
                         </ul>
                     </div>
 
