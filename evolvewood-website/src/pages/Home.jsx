@@ -67,8 +67,8 @@ export default function Home() {
                                 <Leaf size={16} className="text-evolve-light-green" />
                                 <span className="text-white/90 text-sm font-semibold">🌿 Save The Nature — EvolveWood</span>
                             </motion.div>
-                            <motion.h1 variants={fade} className="mb-8 font-display text-[clamp(2.8rem,8vw,5.5rem)] font-black leading-[1.05] tracking-tight text-white">
-                                Built to Last. <br /> <span className="text-evolve-light-green">Made to Sustain.</span>
+                            <motion.h1 variants={fade} className="mb-8 font-display text-[clamp(2rem,5vw,3.8rem)] font-black leading-[1.1] tracking-tight text-white max-w-4xl">
+                                Evolve Wood is a Leading Plastic Lumber Manufacturer <br /> <span className="text-evolve-light-green">in Gujarat, India</span>
                             </motion.h1>
                             <motion.p variants={fade} className="mb-10 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
                                 Premium plastic lumber — the perfect alternative to wood. Made from 100% recycled materials. Waterproof, termite proof, fire retardant, and completely eco-friendly.
