@@ -17,7 +17,7 @@ export default function About() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Sustainable Recycled Plastic Lumber – EvolveWood"
+                title="Sustainable Plastic Lumber – EvolveWood & Evolve Profile Industries"
                 description="Learn about Evolve Profile Industries and our mission to save nature with EvolveWood. We turn recycled plastic waste into durable, eco-friendly lumber for industrial use."
                 url="/about"
                 keywords="about Evolve Profile Industries, EvolveWood sustainability, recycled plastic lumber manufacturer, eco friendly packaging solutions"
