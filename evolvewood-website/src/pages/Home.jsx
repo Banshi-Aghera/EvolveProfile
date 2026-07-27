@@ -213,7 +213,7 @@ export default function Home() {
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
                         {industries.map((ind, i) => (
                             <motion.div key={i} variants={fade} className="group flex flex-col items-center text-center cursor-pointer">
-                                <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full bg-black/20 mb-6 flex items-center justify-center p-4 overflow-hidden relative shadow-lg shadow-black/20 group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500 border border-white/5">
+                                <div className="w-64 h-64 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full bg-black/20 mb-6 flex items-center justify-center p-2 md:p-4 overflow-hidden relative shadow-lg shadow-black/20 group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500 border border-white/5">
                                     <div className="absolute inset-0 bg-evolve-green/0 group-hover:bg-evolve-green/20 transition-colors duration-500 z-10 rounded-full mix-blend-overlay"></div>
                                     <img
                                         src={ind.image}

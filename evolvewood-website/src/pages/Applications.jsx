@@ -244,9 +244,9 @@ export default function Applications() {
                     >
                         <button
                             onClick={() => setLightboxData(null)}
-                            className="absolute right-6 top-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/30 transition-colors"
+                            className="absolute right-3 top-3 sm:right-6 sm:top-6 z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/20 sm:bg-white/10 text-white hover:bg-white/30 transition-colors backdrop-blur-md"
                         >
-                            <X size={24} />
+                            <X size={20} className="sm:w-6 sm:h-6" />
                         </button>
 
                         {/* Lightbox Navigation Arrows */}
@@ -260,9 +260,9 @@ export default function Applications() {
                                             currentIndex: prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
                                         }));
                                     }}
-                                    className="absolute left-6 top-1/2 -translate-y-1/2 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors backdrop-blur-md"
+                                    className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-md"
                                 >
-                                    <ChevronLeft size={32} />
+                                    <ChevronLeft size={24} className="sm:w-8 sm:h-8" />
                                 </button>
                                 <button
                                     onClick={(e) => {
@@ -272,9 +272,9 @@ export default function Applications() {
                                             currentIndex: prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
                                         }));
                                     }}
-                                    className="absolute right-6 top-1/2 -translate-y-1/2 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors backdrop-blur-md"
+                                    className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors backdrop-blur-md"
                                 >
-                                    <ChevronRight size={32} />
+                                    <ChevronRight size={24} className="sm:w-8 sm:h-8" />
                                 </button>
                             </>
                         )}
@@ -287,7 +287,7 @@ export default function Applications() {
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             src={lightboxData.images[lightboxData.currentIndex]}
                             alt="Application preview"
-                            className="max-w-5xl max-h-[75vh] object-contain rounded-xl shadow-2xl"
+                            className="w-full sm:w-auto max-w-full sm:max-w-5xl max-h-[85vh] sm:max-h-[80vh] object-contain rounded-xl shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
 
