@@ -14,7 +14,7 @@ export default function WhyUs() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Why EvolveWood? | Evolve Profile Industries - Recycled Plastic Lumber"
+                title="Why Choose EvolveWood Plastic Lumber"
                 description="Why choose EvolveWood over traditional wood? India generates 3.5 million tonnes of plastic waste annually. EvolveWood converts recycled plastic into durable, eco-friendly lumber. Save The Nature."
                 url="/why-us"
                 keywords="why EvolveWood, recycled plastic vs wood, eco friendly lumber India, Evolve Profile Industries, save the nature, plastic waste recycling"

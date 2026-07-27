@@ -52,6 +52,24 @@ export default function SEO({ title, description, image, url, keywords }) {
             alternateName: `${brandName} | ${secondaryBrandName}`,
             url: siteUrl,
         },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'Home',
+                    'item': siteUrl
+                },
+                location.pathname !== '/' ? {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': title ? title.split(/[-|–]/)[0].trim() : location.pathname.split('/')[1],
+                    'item': `${siteUrl}${location.pathname}`
+                } : null
+            ].filter(Boolean)
+        }
     ];
 
     return (

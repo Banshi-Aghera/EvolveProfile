@@ -53,10 +53,10 @@ export default function Contact() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Contact Us | Evolve Profile Industries"
-                description="Get in touch with Evolve Profile Industries - makers of Evolvewood and Evolveprofile Industries products. Reach our team for queries, orders, and custom requirements."
+                title="Contact EvolveWood | Get in Touch Today"
+                description="Get in touch with Evolve Profile Industries - makers of EvolveWood. Reach our team for queries, orders, and custom recycled plastic lumber requirements."
                 url="/contact"
-                keywords="contact Evolve Profile Industries, Evolvewood enquiry, Evolveprofile Industries contact"
+                keywords="contact Evolve Profile Industries, EvolveWood enquiry, contact EvolveWood"
             />
 
             <PageHeader title="Get in Touch" subtitle="We're here to help you build a sustainable future." />

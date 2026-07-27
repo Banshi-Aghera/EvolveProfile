@@ -18,7 +18,7 @@ export default function Products() {
     return (
         <div className="overflow-hidden bg-white min-h-screen">
             <SEO
-                title="Products | EvolveWood - Recycled Plastic Lumber Profiles"
+                title="Collections – EvolveWood Plastic Lumber Profiles"
                 description="Browse EvolveWood product range: Square bars, rectangle bars, angle profiles, customized profiles, and fabricated products. Made from 100% recycled plastic."
                 url="/products"
             />
