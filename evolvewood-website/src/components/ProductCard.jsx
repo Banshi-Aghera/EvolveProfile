@@ -139,7 +139,7 @@ export default function ProductCard({ product, index }) {
                                     <p className="mt-2 max-w-3xl text-base text-evolve-text/70">{product.description}</p>
                                 </div>
                                 <a
-                                    href={`https://wa.me/919737835404?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20*${encodeURIComponent(product.title.trim())}*%20product.%20Please%20share%20more%20details.`}
+                                    href={`https://wa.me/918141514311?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20*${encodeURIComponent(product.title.trim())}*%20product.%20Please%20share%20more%20details.`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={(e) => e.stopPropagation()}

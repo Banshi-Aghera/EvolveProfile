@@ -18,11 +18,11 @@ export const navigation = [
 export const contactInfo = {
     address: 'Rajkot Highway, At- Sakat Sanala, Pin-363641, Ta- Morbi, Dist-Morbi',
     addressLines: ['Rajkot Hwy, At- Sakat Sanala 363641', 'Ta- Morbi, Dist-Morbi'],
-    phoneNumbers: ['+91 9737835404'],
-    primaryPhoneHref: 'tel:+919737835404',
+    phoneNumbers: ['+91 8141514311'],
+    primaryPhoneHref: 'tel:+918141514311',
     email: 'evolveprofileindustries@gmail.com',
-    whatsappNumber: '+91 9737835404',
-    whatsappUrl: 'https://wa.me/919737835404?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.',
+    whatsappNumber: '+91 8141514311',
+    whatsappUrl: 'https://wa.me/918141514311?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20products.',
 };
 
 export const features = [
