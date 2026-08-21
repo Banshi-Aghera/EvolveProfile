@@ -68,10 +68,10 @@ export default function Home() {
                                 <span className="text-white/90 text-sm font-semibold">🌿 Save The Nature — EvolveWood</span>
                             </motion.div>
                             <motion.h1 variants={fade} className="mb-8 font-display text-[clamp(2rem,5vw,3.8rem)] font-black leading-[1.1] tracking-tight text-white max-w-4xl">
-                                Evolve Wood is a Leading Plastic Lumber Manufacturer <br /> <span className="text-evolve-light-green">in Gujarat, India</span>
+                                Engineered Evolve Wood A Smarter Alternative <br /> <span className="text-evolve-light-green">to Traditional Wood </span>
                             </motion.h1>
                             <motion.p variants={fade} className="mb-10 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
-                                Premium plastic lumber — the perfect alternative to wood. Made from 100% recycled materials. Waterproof, termite proof, fire retardant, and completely eco-friendly.
+                                Engineered Evolve Wood, commonly known as plastic lumber, combines durability, sustainability, and low maintenance in one innovative material. Designed to withstand moisture, termites, and harsh environmental conditions, it provides a reliable wood alternative for residential, commercial, and industrial applications.
                             </motion.p>
                             <motion.div variants={fade} className="flex flex-wrap gap-3 mb-10">
                                 {['Eco Friendly', 'Built to Last', 'Easy to Work With', 'No Maintenance'].map((tag) => (
