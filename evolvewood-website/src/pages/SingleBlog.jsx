@@ -19,13 +19,45 @@ export default function SingleBlog() {
         );
     }
 
+    const blogSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: blog.title,
+        description: blog.excerpt,
+        image: blog.image ? (blog.image.startsWith('http') ? blog.image : `https://evolveprofileindustries.com${blog.image}`) : undefined,
+        datePublished: blog.date ? new Date(blog.date).toISOString() : undefined,
+        author: {
+            '@type': 'Person',
+            name: blog.author || 'EvolveProfile Team'
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Evolve Profile Industries',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://evolveprofileindustries.com/images/logo.png'
+            }
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://evolveprofileindustries.com/blog/${blog.slug}`
+        }
+    };
+
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
-            <SEO title={blog.title} description={blog.excerpt} />
+            <SEO
+                title={blog.title}
+                description={blog.excerpt}
+                image={blog.image}
+                url={`/blog/${blog.slug}`}
+                ogType="article"
+                schema={blogSchema}
+            />
             
             <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden rounded-b-[4rem] shadow-2xl z-10">
                 <div className="absolute inset-0 bg-evolve-brown">
-                    <img src={blog.image} alt="Background cover" className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" />
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
                 </div>
                 <motion.div 

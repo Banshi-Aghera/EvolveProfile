@@ -27,7 +27,7 @@ const normalizeUrl = (url, pathname) => {
     return `${siteUrl}${pathname === '/' ? '' : pathname}`;
 };
 
-export default function SEO({ title, description, image, url, keywords }) {
+export default function SEO({ title, description, image, url, keywords, noindex = false, ogType = 'website', schema }) {
     const location = useLocation();
     const pageTitle = title ? (shouldUseExactTitle(title) ? title : `${title} | ${siteName}`) : defaultTitle;
     const metaDescription = description || defaultDescription;
@@ -35,22 +35,53 @@ export default function SEO({ title, description, image, url, keywords }) {
     const canonicalUrl = normalizeUrl(url, location.pathname);
     const metaImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : defaultImage;
 
-    const structuredData = [
+    const baseStructuredData = [
         {
             '@context': 'https://schema.org',
             '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
             name: siteName,
-            alternateName: brandName,
+            alternateName: [brandName, secondaryBrandName, 'Evolve Wood'],
             url: siteUrl,
             logo: defaultImage,
             description: defaultDescription,
+            contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+91 8141514311',
+                contactType: 'customer service',
+                areaServed: 'IN',
+                availableLanguage: ['English', 'Hindi', 'Gujarati']
+            }
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            '@id': `${siteUrl}/#localbusiness`,
+            name: siteName,
+            image: defaultImage,
+            url: siteUrl,
+            telephone: '+91 8141514311',
+            email: 'evolveprofileindustries@gmail.com',
+            priceRange: '$$',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Rajkot Highway, At- Sakat Sanala',
+                addressLocality: 'Morbi',
+                addressRegion: 'Gujarat',
+                postalCode: '363641',
+                addressCountry: 'IN'
+            }
         },
         {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
             name: siteName,
             alternateName: `${brandName} | ${secondaryBrandName}`,
             url: siteUrl,
+            publisher: {
+                '@id': `${siteUrl}/#organization`
+            }
         },
         {
             '@context': 'https://schema.org',
@@ -72,15 +103,18 @@ export default function SEO({ title, description, image, url, keywords }) {
         }
     ];
 
+    const extraSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+    const structuredData = [...baseStructuredData, ...extraSchema];
+
     return (
         <Helmet>
             <title>{pageTitle}</title>
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={metaKeywords} />
-            <meta name="robots" content="index, follow" />
+            <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
             <link rel="canonical" href={canonicalUrl} />
 
-            <meta property="og:type" content="website" />
+            <meta property="og:type" content={ogType} />
             <meta property="og:site_name" content={siteName} />
             <meta property="og:title" content={pageTitle} />
             <meta property="og:description" content={metaDescription} />

@@ -185,7 +185,12 @@ export default function Applications() {
 
     return (
         <div className="bg-evolve-cream min-h-screen">
-            <SEO title="Applications | EvolveWood Recycled Plastic Profiles" />
+            <SEO
+                title="Applications | EvolveWood Recycled Plastic Profiles"
+                description="Explore versatile applications of EvolveWood recycled plastic lumber across industrial packaging, civil engineering, agriculture, storage godowns, automobile transport, and outdoor furniture."
+                url="/applications"
+                keywords="EvolveWood applications, recycled plastic lumber applications, industrial plastic packaging, outdoor plastic furniture, plastic dunnage, plastic fencing"
+            />
 
             {/* Cinematic Hero Banner */}
             <section className="relative min-h-[70vh] flex items-end overflow-hidden">

@@ -7,7 +7,12 @@ import { motion } from 'framer-motion';
 export default function Industries() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
-            <SEO title="Industries We Serve" description="Evolve Wood serves various sectors including Industrial, Storage, Civil, and Furniture." />
+            <SEO
+                title="Industries We Serve – Heavy Duty Plastic Lumber Solutions"
+                description="EvolveWood by Evolve Profile Industries supplies recycled plastic profiles and lumber to Industrial, Storage, Civil Engineering, Agriculture, Automobile, and Outdoor Furniture sectors."
+                url="/industries"
+                keywords="industries served plastic lumber, industrial plastic profiles, heavy duty plastic lumber India, civil engineering plastic profiles, warehouse dunnage profiles"
+            />
             
             <PageHeader title="Industries We Serve" subtitle="Versatile solutions for a wide range of industrial and commercial applications." />
 

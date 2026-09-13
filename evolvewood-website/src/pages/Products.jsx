@@ -15,12 +15,33 @@ const stagger = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { s
 export default function Products() {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
+    const productSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'EvolveWood Recycled Plastic Lumber Profiles',
+        description: 'High-strength, durable, and eco-friendly recycled plastic lumber profiles',
+        itemListElement: products.map((prod, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'Product',
+                name: prod.title,
+                description: prod.subtitle || prod.title,
+                brand: {
+                    '@type': 'Brand',
+                    name: 'EvolveWood'
+                }
+            }
+        }))
+    };
+
     return (
         <div className="overflow-hidden bg-white min-h-screen">
             <SEO
                 title="Collections – EvolveWood by Evolve Profile Industries"
                 description="Browse EvolveWood product range: Square bars, rectangle bars, angle profiles, customized profiles, and fabricated products. Made from 100% recycled plastic."
                 url="/products"
+                schema={productSchema}
             />
 
             <PageHeader title="Product Profiles Range" subtitle="High-strength, durable, and eco-friendly alternatives to wood." />

@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 export default function NotFound() {
     return (
         <div className="min-h-screen flex flex-col flex-1 items-center justify-center text-center px-4 bg-evolve-cream relative overflow-hidden">
-            <SEO title="Page Not Found" />
+            <SEO title="Page Not Found" noindex={true} />
             
             <div className="blob bg-evolve-green/10 w-[500px] h-[500px] top-[10%] left-[-10%]"></div>
             <div className="blob bg-evolve-brown/10 w-[600px] h-[600px] bottom-[10%] right-[-10%]"></div>

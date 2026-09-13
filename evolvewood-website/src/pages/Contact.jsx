@@ -50,6 +50,27 @@ const contactMethods = [
 ];
 
 export default function Contact() {
+    const contactSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact Evolve Profile Industries',
+        description: 'Get in touch with Evolve Profile Industries - makers of EvolveWood recycled plastic lumber.',
+        mainEntity: {
+            '@type': 'LocalBusiness',
+            name: 'Evolve Profile Industries',
+            telephone: '+91 8141514311',
+            email: 'evolveprofileindustries@gmail.com',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Rajkot Highway, At- Sakat Sanala',
+                addressLocality: 'Morbi',
+                addressRegion: 'Gujarat',
+                postalCode: '363641',
+                addressCountry: 'IN'
+            }
+        }
+    };
+
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
@@ -57,6 +78,7 @@ export default function Contact() {
                 description="Get in touch with Evolve Profile Industries - makers of EvolveWood. Reach our team for queries, orders, and custom recycled plastic lumber requirements."
                 url="/contact"
                 keywords="contact Evolve Profile Industries, EvolveWood enquiry, contact EvolveWood"
+                schema={contactSchema}
             />
 
             <PageHeader title="Get in Touch" subtitle="We're here to help you build a sustainable future." />
