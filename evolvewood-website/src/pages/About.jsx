@@ -17,10 +17,9 @@ export default function About() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Sustainable Plastic Lumber – EvolveWood & Evolve Profile Industries"
-                description="Learn about Evolve Profile Industries and our mission to save nature with EvolveWood. We turn recycled plastic waste into durable, eco-friendly lumber for industrial use."
+                title="About Evolve Profile Industries | Recycled Plastic Lumber Manufacturer, Morbi Gujarat"
+                description="Evolve Profile Industries — manufacturers of EvolveWood recycled plastic lumber in Morbi, Gujarat. Turning plastic waste into durable, eco-friendly industrial profiles since inception."
                 url="/about"
-                keywords="about Evolve Profile Industries, EvolveWood sustainability, recycled plastic lumber manufacturer, eco friendly packaging solutions"
             />
             
             <PageHeader title="About Us" subtitle="Dedicated to innovation and sustainability from start to finish." />

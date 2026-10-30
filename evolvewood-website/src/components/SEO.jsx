@@ -3,66 +3,50 @@ import { useLocation } from 'react-router-dom';
 
 const siteName = 'Evolve Profile Industries';
 const brandName = 'EvolveWood';
-const secondaryBrandName = 'Evolveprofile Industries';
-const alternateBrands = [brandName, secondaryBrandName, 'Evolveprofile', 'EvolveWood'];
-const defaultTitle = 'EvolveWood | Evolve Profile Industries - Recycled Plastic Lumber | Save The Nature | Plastic Lumber Manufacturer in India | HDPE Plastic Lumber | Recycled Plastic Lumber | Evolve Profile Industries';
-const defaultDescription = 'EvolveWood by Evolve Profile Industries - India\'s leading manufacturer of recycled plastic lumber. 100% eco-friendly, termite proof, waterproof, fire retardant profiles for industrial, civil & furniture applications. Save The Nature. Evolve Profile Industries is a leading Plastic Lumber Manufacturer in India offering HDPE Plastic Lumber, Recycled Plastic Lumber, Plastic Wood, Plastic Boards, Plastic Profiles and sustainable plastic extrusion products for industrial, commercial and infrastructure applications.';
-const defaultKeywords = 'EvolveWood, Evolve Profile Industries, Evolveprofile Industries, recycled plastic lumber, eco friendly packaging, termite proof wood, waterproof lumber, fire retardant profiles, save the nature, plastic wood India, evolveprofileindustries.com, Plastic Lumber, Plastic Lumber Manufacturer, Plastic Lumber Supplier, Plastic Lumber Exporter, Plastic Lumber India, HDPE Plastic Lumber, Recycled Plastic Lumber, Plastic Wood, Plastic Wood Boards, Plastic Timber, Plastic Lumber Products, Plastic Lumber Company, Plastic Profiles, Plastic Extrusion Manufacturer, Plastic Building Material, Plastic Industrial Profiles, Engineering Plastic Profiles, Eco Friendly Plastic Lumber, Plastic Composite Lumber, Industrial Plastic Boards, Construction Plastic Lumber, Heavy Duty Plastic Lumber, Plastic Lumber Manufacturer Gujarat, Plastic Lumber Manufacturer Rajkot, Plastic Lumber Exporter India, Plastic Lumber Supplier India, HDPE Plastic Boards, HDPE Plastic Sheets, Recycled Plastic Boards, Plastic Furniture Material, Plastic Outdoor Boards, Plastic Garden Lumber, Plastic Decking Material, Plastic Fence Boards, Plastic Lumber Planks, Plastic Lumber Sheets, Plastic Structural Profiles, Plastic Section Manufacturer, Plastic Extrusion Products, Plastic Industrial Components, Plastic Profile Supplier, Plastic Extrusion Company, Plastic Wood Alternatives, Maintenance Free Lumber, Weather Resistant Plastic Lumber, UV Resistant Plastic Lumber, Termite Proof Plastic Lumber, Green Building Material, Best Plastic Lumber Manufacturer in India, Best Plastic Lumber Supplier, Top Plastic Lumber Company, Plastic Lumber Exporter Gujarat, Plastic Lumber Price India, Buy Plastic Lumber Online, Plastic Boards Manufacturer, Plastic Lumber for Construction, Plastic Lumber for Furniture, Plastic Lumber for Outdoor Furniture, Plastic Lumber for Garden Furniture, Plastic Lumber for Marine Applications, Plastic Lumber for Landscaping, Plastic Lumber for Decking, Plastic Lumber for Fencing, Plastic Lumber for Park Benches, Plastic Lumber for Industrial Applications, Plastic Lumber Supplier Near Me, Wholesale Plastic Lumber India, Bulk Plastic Lumber Supplier, Plastic Lumber Ahmedabad, Plastic Lumber Morbi, Plastic Lumber Company India, Plastic Profile Manufacturer Gujarat, Plastic Extrusion Gujarat, Plastic Lumber Price, Plastic Wood Supplier, Plastic Boards Supplier, plastic lumber, plastic lumber gujrat, plastic lumber india';
-const runtimeOrigin = typeof window !== 'undefined' ? window.location.origin : '';
-const siteUrl = (import.meta.env.VITE_SITE_URL || runtimeOrigin || 'https://evolveprofileindustries.com').replace(/\/$/, '');
+const siteUrl = 'https://www.evolveprofileindustries.com';
 const defaultImage = `${siteUrl}/images/logo.png`;
 
-const shouldUseExactTitle = (title = '') => {
-    const normalizedTitle = title.toLowerCase();
-    const knownNames = [siteName, ...alternateBrands].map((name) => name.toLowerCase());
+// Page-specific SEO defaults — concise, keyword-targeted
+const defaultTitle = 'Plastic Lumber Manufacturer in India | EvolveWood — Evolve Profile Industries';
+const defaultDescription =
+    'Evolve Profile Industries manufactures EvolveWood — India\'s premium recycled plastic lumber. Waterproof, termite-proof, fire-retardant HDPE profiles for industrial, civil & outdoor use. Morbi, Gujarat.';
 
-    return knownNames.some((name) => normalizedTitle.includes(name));
+const shouldUseExactTitle = (title = '') => {
+    const normalized = title.toLowerCase();
+    const knownNames = [siteName, brandName, 'evolveprofile', 'evolvewood'].map(n => n.toLowerCase());
+    return knownNames.some(n => normalized.includes(n));
 };
 
 const normalizeUrl = (url, pathname) => {
     if (url) {
         return url.startsWith('http') ? url : `${siteUrl}${url.startsWith('/') ? url : `/${url}`}`;
     }
-
     return `${siteUrl}${pathname === '/' ? '' : pathname}`;
 };
 
-export default function SEO({ title, description, image, url, keywords, noindex = false, ogType = 'website', schema }) {
+export default function SEO({ title, description, image, url, noindex = false, ogType = 'website', schema }) {
     const location = useLocation();
     const pageTitle = title ? (shouldUseExactTitle(title) ? title : `${title} | ${siteName}`) : defaultTitle;
     const metaDescription = description || defaultDescription;
-    const metaKeywords = keywords || defaultKeywords;
     const canonicalUrl = normalizeUrl(url, location.pathname);
     const metaImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : defaultImage;
 
+    // Base structured data — injected on every page
     const baseStructuredData = [
         {
             '@context': 'https://schema.org',
-            '@type': 'Organization',
+            '@type': ['Organization', 'ManufacturingBusiness'],
             '@id': `${siteUrl}/#organization`,
             name: siteName,
-            alternateName: [brandName, secondaryBrandName, 'Evolve Wood'],
+            alternateName: [brandName, 'Evolve Profile Industries', 'EvolveWood'],
             url: siteUrl,
-            logo: defaultImage,
+            logo: {
+                '@type': 'ImageObject',
+                url: defaultImage,
+                width: 512,
+                height: 512
+            },
             description: defaultDescription,
-            contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+91 8141514311',
-                contactType: 'customer service',
-                areaServed: 'IN',
-                availableLanguage: ['English', 'Hindi', 'Gujarati']
-            }
-        },
-        {
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            '@id': `${siteUrl}/#localbusiness`,
-            name: siteName,
-            image: defaultImage,
-            url: siteUrl,
-            telephone: '+91 8141514311',
-            email: 'evolveprofileindustries@gmail.com',
-            priceRange: '$$',
             address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Rajkot Highway, At- Sakat Sanala',
@@ -70,34 +54,41 @@ export default function SEO({ title, description, image, url, keywords, noindex 
                 addressRegion: 'Gujarat',
                 postalCode: '363641',
                 addressCountry: 'IN'
-            }
+            },
+            contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+91-8141514311',
+                contactType: 'sales',
+                areaServed: 'IN',
+                availableLanguage: ['English', 'Hindi', 'Gujarati']
+            },
+            sameAs: [
+                'https://www.evolveprofileindustries.com'
+            ]
         },
         {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             '@id': `${siteUrl}/#website`,
             name: siteName,
-            alternateName: `${brandName} | ${secondaryBrandName}`,
             url: siteUrl,
-            publisher: {
-                '@id': `${siteUrl}/#organization`
-            }
+            publisher: { '@id': `${siteUrl}/#organization` }
         },
         {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
-            'itemListElement': [
+            itemListElement: [
                 {
                     '@type': 'ListItem',
-                    'position': 1,
-                    'name': 'Home',
-                    'item': siteUrl
+                    position: 1,
+                    name: 'Home',
+                    item: siteUrl
                 },
                 location.pathname !== '/' ? {
                     '@type': 'ListItem',
-                    'position': 2,
-                    'name': title ? title.split(/[-|–]/)[0].trim() : location.pathname.split('/')[1],
-                    'item': `${siteUrl}${location.pathname}`
+                    position: 2,
+                    name: title ? title.split(/[-|–|]/)[0].trim() : location.pathname.replace('/', '').replace(/-/g, ' '),
+                    item: `${siteUrl}${location.pathname}`
                 } : null
             ].filter(Boolean)
         }
@@ -110,22 +101,28 @@ export default function SEO({ title, description, image, url, keywords, noindex 
         <Helmet>
             <title>{pageTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={metaKeywords} />
             <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
             <link rel="canonical" href={canonicalUrl} />
 
+            {/* Open Graph */}
             <meta property="og:type" content={ogType} />
+            <meta property="og:locale" content="en_IN" />
             <meta property="og:site_name" content={siteName} />
             <meta property="og:title" content={pageTitle} />
             <meta property="og:description" content={metaDescription} />
             <meta property="og:url" content={canonicalUrl} />
             <meta property="og:image" content={metaImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:image:alt" content={`${siteName} — ${brandName}`} />
 
+            {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={metaDescription} />
             <meta name="twitter:image" content={metaImage} />
 
+            {/* Structured Data */}
             <script type="application/ld+json">
                 {JSON.stringify(structuredData)}
             </script>

@@ -93,25 +93,24 @@ export default function SingleBlog() {
                             <p className="lead text-2xl text-evolve-brown font-medium mb-10 leading-relaxed font-display">{blog.excerpt}</p>
                             
                             <div className="bg-gradient-to-br from-evolve-green/10 to-transparent p-10 rounded-[2rem] border-l-8 border-evolve-green mb-10 shadow-inner">
-                                <p className="italic text-evolve-brown text-xl leading-relaxed m-0 font-medium whitespace-pre-wrap">"{blog.content}"</p>
+                                <div className="text-evolve-brown text-lg leading-relaxed whitespace-pre-wrap">
+                                    {blog.content && blog.content.split('\n').map((line, i) => {
+                                        if (line.startsWith('## ')) return <h2 key={i} className="text-3xl font-black font-display text-evolve-brown mt-10 mb-4">{line.replace('## ', '')}</h2>;
+                                        if (line.startsWith('### ')) return <h3 key={i} className="text-2xl font-black font-display text-evolve-brown mt-8 mb-3">{line.replace('### ', '')}</h3>;
+                                        if (line.startsWith('#### ')) return <h4 key={i} className="text-xl font-bold text-evolve-brown mt-6 mb-2">{line.replace('#### ', '')}</h4>;
+                                        if (line.startsWith('**') && line.endsWith('**')) return <p key={i} className="font-bold text-evolve-brown my-2">{line.replace(/\*\*/g, '')}</p>;
+                                        if (line.startsWith('* ')) return <li key={i} className="ml-6 list-disc text-evolve-text/80 my-1">{line.replace('* ', '')}</li>;
+                                        if (line.match(/^\d+\./)) return <p key={i} className="ml-4 text-evolve-text/80 my-1 font-medium">{line}</p>;
+                                        if (line.trim() === '') return <br key={i} />;
+                                        return <p key={i} className="text-evolve-text/80 my-3 leading-relaxed">{line}</p>;
+                                    })}
+                                </div>
                                 {blog.insideImage && (
                                     <div className="mt-10 flex justify-center">
-                                        <img src={blog.insideImage} alt={`${blog.title} inside`} className="rounded-2xl max-w-full h-auto shadow-lg object-contain bg-white/50 p-2 border border-evolve-green/20" />
+                                        <img src={blog.insideImage} alt={`${blog.title} — EvolveWood`} className="rounded-2xl max-w-full h-auto shadow-lg object-contain bg-white/50 p-2 border border-evolve-green/20" />
                                     </div>
                                 )}
-                                <p className="text-sm mt-6 text-evolve-text/60 font-bold uppercase tracking-widest">[Full Content Area]</p>
                             </div>
-                            
-                            <p className="text-lg leading-relaxed text-evolve-text/80 mb-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                            
-                            <h3 className="text-3xl font-black font-display text-evolve-brown mt-12 mb-6">Impact on Sustainability</h3>
-                            <p className="text-lg leading-relaxed text-evolve-text/80">
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
                         </div>
                     </motion.div>
 

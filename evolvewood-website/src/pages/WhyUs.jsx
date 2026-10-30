@@ -14,10 +14,47 @@ export default function WhyUs() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Why Choose EvolveWood by Evolve Profile Industries"
-                description="Why choose EvolveWood over traditional wood? India generates 3.5 million tonnes of plastic waste annually. EvolveWood converts recycled plastic into durable, eco-friendly lumber. Save The Nature."
+                title="Plastic Lumber vs Wood | Why Choose EvolveWood — Evolve Profile Industries"
+                description="Discover why EvolveWood recycled plastic lumber outperforms traditional wood. Zero maintenance, 100% waterproof, termite-proof, fire-retardant, and eco-friendly. Made in Morbi, Gujarat."
                 url="/why-us"
-                keywords="why EvolveWood, recycled plastic vs wood, eco friendly lumber India, Evolve Profile Industries, save the nature, plastic waste recycling"
+                schema={{
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    mainEntity: [
+                        {
+                            '@type': 'Question',
+                            name: 'Is plastic lumber better than wood?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Yes. EvolveWood plastic lumber is 100% termite-proof, waterproof, fire-retardant, and requires zero maintenance — unlike traditional wood which rots, warps, and needs regular painting and chemical treatment.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'What is EvolveWood made from?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'EvolveWood is manufactured from 100% recycled plastic waste including HDPE. This makes it eco-friendly, durable, and a sustainable alternative to cutting down trees.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Does plastic lumber require maintenance?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'No. EvolveWood plastic lumber requires zero maintenance. It does not need painting, staining, sealing, or chemical treatment. Simply wash with water when needed.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            name: 'Can plastic lumber be cut and drilled like wood?',
+                            acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: 'Yes. EvolveWood can be cut with a regular saw, drilled, routed, nailed, and screwed using standard woodworking tools — making it a true drop-in replacement for traditional timber.'
+                            }
+                        }
+                    ]
+                }}
             />
             <PageHeader title="Why EvolveWood?" subtitle="The smart, sustainable choice for modern industry." />
 

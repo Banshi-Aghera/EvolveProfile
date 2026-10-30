@@ -186,10 +186,9 @@ export default function Applications() {
     return (
         <div className="bg-evolve-cream min-h-screen">
             <SEO
-                title="Applications | EvolveWood Recycled Plastic Profiles"
-                description="Explore versatile applications of EvolveWood recycled plastic lumber across industrial packaging, civil engineering, agriculture, storage godowns, automobile transport, and outdoor furniture."
+                title="Plastic Lumber Applications | Industrial, Civil, Marine & Outdoor Uses — EvolveWood"
+                description="Explore EvolveWood recycled plastic lumber applications: industrial pipe support, bridge & boardwalk, warehouse dunnage, outdoor furniture, fencing, marine structures & agriculture."
                 url="/applications"
-                keywords="EvolveWood applications, recycled plastic lumber applications, industrial plastic packaging, outdoor plastic furniture, plastic dunnage, plastic fencing"
             />
 
             {/* Cinematic Hero Banner */}

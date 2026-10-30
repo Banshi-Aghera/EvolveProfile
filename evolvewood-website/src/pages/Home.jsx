@@ -36,10 +36,9 @@ export default function Home() {
     return (
         <div className="relative overflow-x-hidden bg-evolve-cream">
             <SEO
-                title="EvolveWood by Evolve Profile Industries – Plastic Lumber Manufacturer"
-                description="EvolveWood by Evolve Profile Industries - India's leading manufacturer of recycled plastic lumber. 100% eco-friendly, termite proof, waterproof, fire retardant profiles. Save The Nature."
+                title="Plastic Lumber Manufacturer in India | EvolveWood — Evolve Profile Industries"
+                description="Evolve Profile Industries manufactures EvolveWood recycled plastic lumber in Morbi, Gujarat. 100% eco-friendly, waterproof, termite-proof and fire-retardant HDPE profiles for industry."
                 url="/"
-                keywords="EvolveWood, Evolve Profile Industries, recycled plastic lumber, eco friendly packaging India, save the nature, termite proof, waterproof wood alternative"
             />
 
             {/* ═══ HERO — CINEMATIC FULL-BLEED ═══ */}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, ArrowUpRight, Download, FileText } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -38,8 +39,8 @@ export default function Products() {
     return (
         <div className="overflow-hidden bg-white min-h-screen">
             <SEO
-                title="Collections – EvolveWood by Evolve Profile Industries"
-                description="Browse EvolveWood product range: Square bars, rectangle bars, angle profiles, customized profiles, and fabricated products. Made from 100% recycled plastic."
+                title="Recycled Plastic Lumber Profiles | HDPE Square, Rectangle & Round Bars — EvolveWood"
+                description="Buy EvolveWood recycled HDPE plastic lumber profiles: square bars (30–150mm), rectangle bars, round bars, corner protection & custom fabricated solutions. Manufacturer in Morbi, Gujarat."
                 url="/products"
                 schema={productSchema}
             />
@@ -115,10 +116,11 @@ export default function Products() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5 }}
+                                className="flex flex-col"
                             >
                                 <button
                                     onClick={() => setSelectedProduct(product)}
-                                    className="w-full group flex flex-col bg-white rounded-[2rem] p-6 text-left hover:shadow-2xl hover:shadow-evolve-brown/10 transition-all duration-500 border border-evolve-brown/5"
+                                    className="w-full group flex flex-col bg-white rounded-[2rem] p-6 text-left hover:shadow-2xl hover:shadow-evolve-brown/10 transition-all duration-500 border border-evolve-brown/5 flex-grow"
                                 >
                                     <div className="w-full aspect-square rounded-2xl overflow-hidden bg-evolve-cream mb-6 relative">
                                         <div className="absolute inset-0 bg-evolve-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
@@ -135,6 +137,14 @@ export default function Products() {
                                         View Details <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                                     </div>
                                 </button>
+                                <div className="mt-3 text-center">
+                                    <Link
+                                        to={`/products/${product.id.trim().toLowerCase().replace(/\s+/g, '-')}`}
+                                        className="inline-flex items-center gap-1.5 text-xs font-bold text-evolve-brown/60 hover:text-evolve-green uppercase tracking-wider transition-colors py-1"
+                                    >
+                                        View Full Page <ArrowUpRight size={14} />
+                                    </Link>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -196,25 +206,34 @@ export default function Products() {
                                 <span className="text-evolve-green font-bold tracking-[0.2em] uppercase text-xs block mb-3">Profile Details</span>
                                 <h3 className="text-3xl lg:text-4xl font-black font-display text-evolve-brown mb-6">{selectedProduct.title}</h3>
                                 <p className="text-base text-evolve-text/70 leading-relaxed mb-8">{selectedProduct.description}</p>
-                                <a
-                                    href={`https://wa.me/918141514311?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20*${encodeURIComponent(selectedProduct.title.trim())}*%20product.%20Please%20share%20more%20details.`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30 w-fit"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-                                    Inquire Now
-                                </a>
-                                <a
-                                    href="/Brochure/EVOLVE WOOD.pdf"
-                                    download="EvolveWood-Brochure.pdf"
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 w-fit mt-3"
-                                >
-                                    <Download size={18} />
-                                    Download EvolveWood Brochure
-                                </a>
+                                <div className="flex flex-wrap items-center gap-3 mt-4">
+                                    <a
+                                        href={`https://wa.me/918141514311?text=Hello%20EvolveWood%2C%20I%20am%20interested%20in%20your%20*${encodeURIComponent(selectedProduct.title.trim())}*%20product.%20Please%20share%20more%20details.`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30 w-fit"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+                                        Inquire Now
+                                    </a>
+                                    <Link
+                                        to={`/products/${selectedProduct.id.trim().toLowerCase().replace(/\s+/g, '-')}`}
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="inline-flex items-center gap-2 bg-evolve-green hover:bg-evolve-light-green text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 w-fit"
+                                    >
+                                        View Full Page <ArrowUpRight size={16} />
+                                    </Link>
+                                    <a
+                                        href="/Brochure/EVOLVE WOOD.pdf"
+                                        download="EvolveWood-Brochure.pdf"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="inline-flex items-center gap-2 bg-evolve-brown hover:bg-evolve-brown/80 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 w-fit"
+                                    >
+                                        <Download size={18} />
+                                        Brochure
+                                    </a>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>

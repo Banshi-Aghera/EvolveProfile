@@ -19,7 +19,7 @@ export default function Blog() {
 
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
-            <SEO title="Blog & Insights | EvolveWood" description="Latest news and insights on sustainable manufacturing and packaging." />
+            <SEO title="Blog & Insights | Plastic Lumber, Sustainability & Green Building — EvolveWood" description="Read the EvolveWood blog: insights on recycled plastic lumber, sustainable construction, eco-friendly materials, and green building practices in India." url="/blog" />
             
             <PageHeader title="Insights & News" subtitle="Exploring sustainability, recycling, and industry trends." />
 

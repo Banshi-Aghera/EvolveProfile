@@ -6,98 +6,134 @@
 
   <!-- Home Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/about</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/about</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Why Us Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/why-us</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/why-us</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Products Page -->
+  <!-- Products Landing Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/products</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/products</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Industries Page -->
+  <!-- Individual Product Pages -->
   <url>
-    <loc>https://evolveprofileindustries.com/industries</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.evolveprofileindustries.com/products/square-bars</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/products/rectangle-bars</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/products/round-bars</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/products/customized-profiles</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/products/fabricated-products</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/products/corner-protection</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Applications Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/applications</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/applications</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Features Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/features</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/features</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog Index -->
   <url>
-    <loc>https://evolveprofileindustries.com/blog</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/blog</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://evolveprofileindustries.com/blog/the-future-of-recycled-packaging</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/blog/what-is-plastic-lumber</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://evolveprofileindustries.com/blog/why-choose-evolve-wood</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/blog/the-future-of-recycled-packaging</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://evolveprofileindustries.com/blog/waste-to-best</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/blog/why-choose-evolve-wood</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://evolveprofileindustries.com/blog/go-green-sustainable-building</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/blog/waste-to-best</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.evolveprofileindustries.com/blog/go-green-sustainable-building</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://evolveprofileindustries.com/contact</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://www.evolveprofileindustries.com/contact</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

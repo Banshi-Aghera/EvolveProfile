@@ -74,10 +74,9 @@ export default function Contact() {
     return (
         <div className="overflow-hidden bg-evolve-cream min-h-screen">
             <SEO
-                title="Contact Evolve Profile Industries & EvolveWood | Get in Touch"
-                description="Get in touch with Evolve Profile Industries - makers of EvolveWood. Reach our team for queries, orders, and custom recycled plastic lumber requirements."
+                title="Contact Evolve Profile Industries | Request a Plastic Lumber Quote — Morbi, Gujarat"
+                description="Contact Evolve Profile Industries for recycled plastic lumber quotes. Manufacturer in Morbi, Gujarat. Call +91 8141514311 or email evolveprofileindustries@gmail.com. Custom profiles available."
                 url="/contact"
-                keywords="contact Evolve Profile Industries, EvolveWood enquiry, contact EvolveWood"
                 schema={contactSchema}
             />
 

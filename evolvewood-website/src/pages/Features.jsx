@@ -7,8 +7,8 @@ export default function Features() {
     return (
         <div className="bg-white min-h-screen">
             <SEO
-                title="EvolveWood Features | Premium Quality Attributes"
-                description="Explore the 11 core attributes of EvolveWood, from fire retardant and chemical resistant to 100% waterproof and termite proof."
+                title="EvolveWood Features | Waterproof, Termite-Proof, Fire-Retardant Plastic Lumber"
+                description="EvolveWood plastic lumber is 100% waterproof, termite & pest proof, fire retardant, UV-protected, chemical resistant, and maintenance-free. Superior to traditional wood in every way."
                 url="/features"
             />
             
